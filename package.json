@@ -1,6 +1,6 @@
 {
   "name": "@pinjs/gem-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "⚡️ Gempages Generation CLI Experience",
   "license": "MIT",
   "type": "module",
