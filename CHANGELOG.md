@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.13
+
+[compare changes](https://github.com/pin705/gem-cli/compare/v0.0.12...v0.0.13)
+
 ## v0.0.12
 
 [compare changes](https://github.com/pin705/gem-cli/compare/v0.0.11...v0.0.12)
