@@ -1,2 +1,2 @@
-import { runMain } from '../build/index.mjs'
+import { runMain } from '../dist/index.mjs'
 runMain()
