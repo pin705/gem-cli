@@ -1,6 +1,6 @@
 {
   "name": "@pinjs/gem-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "⚡️ Gempages Generation CLI Experience",
   "license": "MIT",
   "type": "module",
@@ -26,7 +26,8 @@
     "gem-cli-bun": "bun --bun ./bin/gem-cli.mjs",
     "prepack": "unbuild",
     "test": "pnpm lint && pnpm test:types && pnpm build && pnpm test:dist",
-    "test:types": "tsc --noEmit"
+    "test:types": "tsc --noEmit",
+    "release": "changelogen --release && npm publish && git push --follow-tags"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
