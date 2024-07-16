@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.12
+
+[compare changes](https://github.com/pin705/gem-cli/compare/v0.0.11...v0.0.12)
+
+### 🏡 Chore
+
+- Build ([b8baa0a](https://github.com/pin705/gem-cli/commit/b8baa0a))
+
+### ❤️ Contributors
+
+- Pin705 <pinnguyen0597@gmail.com>
+
 ## v0.0.11
 
 [compare changes](https://github.com/pin705/gem-cli/compare/v0.0.10...v0.0.11)
