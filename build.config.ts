@@ -6,4 +6,5 @@ export default defineBuildConfig({
     inlineDependencies: true,
   },
   entries: ['src/index'],
+    externals: ['prompts']
 })
