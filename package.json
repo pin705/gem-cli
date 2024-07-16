@@ -1,6 +1,6 @@
 {
   "name": "@pinjs/gem-cli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "⚡️ Gempages Generation CLI Experience",
   "license": "MIT",
   "type": "module",
@@ -10,9 +10,7 @@
     "url": "https://github.com/pin705/gem-cli"
   },
   "main": "./bin/gem-cli.js",
-  "bin": {
-    "gem-cli": "./bin/gem-cli.js"
-  },
+  "bin": "./bin/gem-cli.js",
   "files": [
     "bin",
     "dist"
