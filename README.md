@@ -1,11 +1,11 @@
 ## Installation
 ```
-$ npm install -g @pinjs/gem-cli
+$ npm install -g @pinjs/gempages-cli
 ```
 ## Usage
 ```
 Usage:
-	$ gem-cli <command>
+	$ gempages-cli <command>
 
 Commands:
 	--init-template     Create base template
@@ -13,7 +13,5 @@ Commands:
 ```
 ## Example
 ```
-npm run gem-cli --init-template
-yarn gem-cli --init-template
-pnpm gem-cli --init-template
+gempages-cli init-template
 ```
