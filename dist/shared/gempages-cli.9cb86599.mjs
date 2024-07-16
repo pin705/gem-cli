@@ -1012,7 +1012,7 @@ async function runMain$1(cmd, opts = {}) {
 }
 
 const name = "@pinjs/gempages-cli";
-const version = "0.0.11";
+const version = "0.0.13";
 const description = "⚡️ Gempages Generation CLI Experience";
 const license = "MIT";
 const type = "module";
@@ -1021,8 +1021,9 @@ const repository = {
 	type: "git",
 	url: "https://github.com/pin705/gem-cli"
 };
-const main$1 = "./bin/gempages-cli.js";
-const bin = "./bin/gempages-cli.js";
+const bin = {
+	"gempages-cli": "./bin/index.js"
+};
 const files = [
 	"bin",
 	"dist"
@@ -1059,7 +1060,6 @@ const pkg = {
 	type: type,
 	author: author,
 	repository: repository,
-	main: main$1,
 	bin: bin,
 	files: files,
 	scripts: scripts,
