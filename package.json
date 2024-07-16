@@ -10,11 +10,11 @@
   },
   "exports": {
     ".": "./dist/index.mjs",
-    "./cli": "./bin/gem-cli.mjs"
+    "./cli": "./bin/gem-cli.js"
   },
   "types": "./dist/index.d.ts",
   "bin": {
-    "gem-cli": "./bin/gem-cli.mjs"
+    "gem-cli": "./bin/gem-cli.js"
   },
   "files": [
     "bin",
@@ -26,8 +26,8 @@
     "build:stub": "unbuild --stub",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "gem-cli": "node ./bin/gem-cli.mjs",
-    "gem-cli-bun": "bun --bun ./bin/gem-cli.mjs",
+    "gem-cli": "node ./bin/gem-cli.js",
+    "gem-cli-bun": "bun --bun ./bin/gem-cli.js",
     "prepack": "unbuild",
     "test": "pnpm lint && pnpm test:types && pnpm build && pnpm test:dist",
     "test:types": "tsc --noEmit",

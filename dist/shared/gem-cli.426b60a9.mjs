@@ -1012,7 +1012,7 @@ async function runMain$1(cmd, opts = {}) {
 }
 
 const name = "@pinjs/gem-cli";
-const version = "0.0.5";
+const version = "0.0.6";
 const description = "⚡️ Gempages Generation CLI Experience";
 const license = "MIT";
 const type = "module";
@@ -1022,11 +1022,11 @@ const repository = {
 };
 const exports = {
 	".": "./dist/index.mjs",
-	"./cli": "./bin/gem-cli.mjs"
+	"./cli": "./bin/gem-cli.js"
 };
 const types = "./dist/index.d.ts";
 const bin = {
-	"gem-cli": "./bin/gem-cli.mjs"
+	"gem-cli": "./bin/gem-cli.js"
 };
 const files = [
 	"bin",
@@ -1038,8 +1038,8 @@ const scripts = {
 	"build:stub": "unbuild --stub",
 	lint: "eslint .",
 	"lint:fix": "eslint --fix .",
-	"gem-cli": "node ./bin/gem-cli.mjs",
-	"gem-cli-bun": "bun --bun ./bin/gem-cli.mjs",
+	"gem-cli": "node ./bin/gem-cli.js",
+	"gem-cli-bun": "bun --bun ./bin/gem-cli.js",
 	prepack: "unbuild",
 	test: "pnpm lint && pnpm test:types && pnpm build && pnpm test:dist",
 	"test:types": "tsc --noEmit",

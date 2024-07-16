@@ -5,6 +5,5 @@ export default defineBuildConfig({
   rollup: {
     inlineDependencies: true,
   },
-  entries: ['src/index'],
-    externals: ['prompts']
+  entries: ['src/index']
 })
