@@ -1,6 +1,6 @@
 {
   "name": "@pinjs/gem-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "⚡️ Gempages Generation CLI Experience",
   "license": "MIT",
   "type": "module",
@@ -41,7 +41,7 @@
     "eslint": "^9.2.0",
     "eslint-config-unjs": "^0.3.2",
     "unbuild": "^2.0.0",
-     "@types/prompts": "^2.4.9",
+    "@types/prompts": "^2.4.9",
     "node-html-parser": "^6.1.13"
   },
   "engines": {
