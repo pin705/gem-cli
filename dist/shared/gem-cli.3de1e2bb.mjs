@@ -1046,18 +1046,15 @@ const scripts = {
 	release: "changelogen --release && npm publish && git push --follow-tags"
 };
 const devDependencies = {
+	"@inquirer/select": "^2.3.10",
 	"@types/node": "^20.12.7",
 	changelogen: "^0.5.5",
 	citty: "^0.1.6",
 	consola: "^3.2.3",
 	eslint: "^9.2.0",
 	"eslint-config-unjs": "^0.3.2",
-	unbuild: "^2.0.0",
-	"@types/prompts": "^2.4.9",
-	"node-html-parser": "^6.1.13"
-};
-const engines = {
-	node: "^16.10.0 || >=18.0.0"
+	"node-html-parser": "^6.1.13",
+	unbuild: "^2.0.0"
 };
 const pkg = {
 	name: name,
@@ -1071,8 +1068,7 @@ const pkg = {
 	bin: bin,
 	files: files,
 	scripts: scripts,
-	devDependencies: devDependencies,
-	engines: engines
+	devDependencies: devDependencies
 };
 
 const _rDefault = (r) => r.default || r;

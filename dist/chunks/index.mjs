@@ -1,12 +1,20 @@
-import { c as consola, a as colors, d as defineCommand } from '../shared/gem-cli.f1ede9f2.mjs';
-import prompts from 'prompts';
+import { c as consola, a as colors$2, d as defineCommand } from '../shared/gem-cli.3de1e2bb.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
-import readline from 'node:readline';
+import * as readline$1 from 'node:readline';
+import readline__default from 'node:readline';
 import { promisify } from 'node:util';
-import 'node:tty';
+import tty__default from 'node:tty';
+import process$2 from 'node:process';
+import require$$0$3 from 'stream';
+import require$$0$2 from 'tty';
+import { AsyncLocalStorage, AsyncResource } from 'node:async_hooks';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function getDefaultExportFromCjs (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
 
 function getAugmentedNamespace(n) {
   if (n.__esModule) return n;
@@ -507,15 +515,15 @@ comment.default = CommentNode;
 
 var html = {};
 
-var lib$6 = {};
+var lib$7 = {};
 
-var lib$5 = {};
+var lib$6 = {};
 
 var stringify$1 = {};
 
-var lib$4 = {};
+var lib$5 = {};
 
-var lib$3 = {};
+var lib$4 = {};
 
 (function (exports) {
 	Object.defineProperty(exports, "__esModule", { value: true });
@@ -572,7 +580,7 @@ var lib$3 = {};
 	exports.CDATA = ElementType.CDATA;
 	/** Type for <!doctype ...> */
 	exports.Doctype = ElementType.Doctype; 
-} (lib$3));
+} (lib$4));
 
 var node = {};
 
@@ -604,7 +612,7 @@ var __assign$2 = (commonjsGlobal && commonjsGlobal.__assign) || function () {
 };
 Object.defineProperty(node, "__esModule", { value: true });
 node.cloneNode = node.hasChildren = node.isDocument = node.isDirective = node.isComment = node.isText = node.isCDATA = node.isTag = node.Element = node.Document = node.CDATA = node.NodeWithChildren = node.ProcessingInstruction = node.Comment = node.Text = node.DataNode = node.Node = void 0;
-var domelementtype_1$1 = lib$3;
+var domelementtype_1$1 = lib$4;
 /**
  * This object will be used as the prototype for Nodes when creating a
  * DOM-Level-1-compliant structure.
@@ -1067,7 +1075,7 @@ function cloneChildren(childs) {
 	};
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.DomHandler = void 0;
-	var domelementtype_1 = lib$3;
+	var domelementtype_1 = lib$4;
 	var node_js_1 = node;
 	__exportStar(node, exports);
 	// Default options
@@ -1215,11 +1223,11 @@ function cloneChildren(childs) {
 	}());
 	exports.DomHandler = DomHandler;
 	exports.default = DomHandler; 
-} (lib$4));
+} (lib$5));
+
+var lib$3 = {};
 
 var lib$2 = {};
-
-var lib$1 = {};
 
 var decode$1 = {};
 
@@ -2204,7 +2212,7 @@ function encodeHTMLTrieRe(regExp, str) {
 	Object.defineProperty(exports, "decodeHTML5Strict", { enumerable: true, get: function () { return decode_js_2.decodeHTMLStrict; } });
 	Object.defineProperty(exports, "decodeXMLStrict", { enumerable: true, get: function () { return decode_js_2.decodeXML; } });
 	
-} (lib$1));
+} (lib$2));
 
 var foreignNames = {};
 
@@ -2345,13 +2353,13 @@ var __importStar$1 = (commonjsGlobal && commonjsGlobal.__importStar) || function
     __setModuleDefault$1(result, mod);
     return result;
 };
-Object.defineProperty(lib$2, "__esModule", { value: true });
-lib$2.render = void 0;
+Object.defineProperty(lib$3, "__esModule", { value: true });
+lib$3.render = void 0;
 /*
  * Module dependencies
  */
-var ElementType = __importStar$1(lib$3);
-var entities_1 = lib$1;
+var ElementType = __importStar$1(lib$4);
+var entities_1 = lib$2;
 /**
  * Mixed-case SVG and MathML tags & attributes
  * recognized by the HTML parser.
@@ -2440,8 +2448,8 @@ function render(node, options) {
     }
     return output;
 }
-lib$2.render = render;
-lib$2.default = render;
+lib$3.render = render;
+lib$3.default = render;
 function renderNode(node, options) {
     switch (node.type) {
         case ElementType.Root:
@@ -2545,9 +2553,9 @@ var __importDefault$7 = (commonjsGlobal && commonjsGlobal.__importDefault) || fu
 };
 Object.defineProperty(stringify$1, "__esModule", { value: true });
 stringify$1.innerText = stringify$1.textContent = stringify$1.getText = stringify$1.getInnerHTML = stringify$1.getOuterHTML = void 0;
-var domhandler_1$3 = lib$4;
-var dom_serializer_1 = __importDefault$7(lib$2);
-var domelementtype_1 = lib$3;
+var domhandler_1$3 = lib$5;
+var dom_serializer_1 = __importDefault$7(lib$3);
+var domelementtype_1 = lib$4;
 /**
  * @category Stringify
  * @deprecated Use the `dom-serializer` module directly.
@@ -2635,7 +2643,7 @@ var traversal = {};
 
 Object.defineProperty(traversal, "__esModule", { value: true });
 traversal.prevElementSibling = traversal.nextElementSibling = traversal.getName = traversal.hasAttrib = traversal.getAttributeValue = traversal.getSiblings = traversal.getParent = traversal.getChildren = void 0;
-var domhandler_1$2 = lib$4;
+var domhandler_1$2 = lib$5;
 /**
  * Get a node's children.
  *
@@ -2906,7 +2914,7 @@ var querying = {};
 
 Object.defineProperty(querying, "__esModule", { value: true });
 querying.findAll = querying.existsOne = querying.findOne = querying.findOneChild = querying.find = querying.filter = void 0;
-var domhandler_1$1 = lib$4;
+var domhandler_1$1 = lib$5;
 /**
  * Search a node and its children for nodes passing a test function. If `node` is not an array, it will be wrapped in one.
  *
@@ -3066,7 +3074,7 @@ var legacy = {};
 
 Object.defineProperty(legacy, "__esModule", { value: true });
 legacy.getElementsByTagType = legacy.getElementsByTagName = legacy.getElementById = legacy.getElements = legacy.testElement = void 0;
-var domhandler_1 = lib$4;
+var domhandler_1 = lib$5;
 var querying_js_1 = querying;
 /**
  * A map of functions to check nodes against.
@@ -3221,7 +3229,7 @@ var helpers = {};
 (function (exports) {
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.uniqueSort = exports.compareDocumentPosition = exports.DocumentPosition = exports.removeSubsets = void 0;
-	var domhandler_1 = lib$4;
+	var domhandler_1 = lib$5;
 	/**
 	 * Given an array of nodes, remove any member that is contained by another
 	 * member.
@@ -3579,7 +3587,7 @@ function isValidFeed(value) {
 	__exportStar(helpers, exports);
 	__exportStar(feeds, exports);
 	/** @deprecated Use these methods from `domhandler` directly. */
-	var domhandler_1 = lib$4;
+	var domhandler_1 = lib$5;
 	Object.defineProperty(exports, "isTag", { enumerable: true, get: function () { return domhandler_1.isTag; } });
 	Object.defineProperty(exports, "isCDATA", { enumerable: true, get: function () { return domhandler_1.isCDATA; } });
 	Object.defineProperty(exports, "isText", { enumerable: true, get: function () { return domhandler_1.isText; } });
@@ -3587,7 +3595,7 @@ function isValidFeed(value) {
 	Object.defineProperty(exports, "isDocument", { enumerable: true, get: function () { return domhandler_1.isDocument; } });
 	Object.defineProperty(exports, "hasChildren", { enumerable: true, get: function () { return domhandler_1.hasChildren; } });
 	
-} (lib$5));
+} (lib$6));
 
 var boolbase = {
 	trueFunc: function trueFunc(){
@@ -4196,13 +4204,13 @@ const es = {
 	stringify: stringify
 };
 
-const require$$0 = /*@__PURE__*/getAugmentedNamespace(es);
+const require$$0$1 = /*@__PURE__*/getAugmentedNamespace(es);
 
 var sort = {};
 
 Object.defineProperty(sort, "__esModule", { value: true });
 sort.isTraversal = void 0;
-var css_what_1$2 = require$$0;
+var css_what_1$2 = require$$0$1;
 var procedure = new Map([
     [css_what_1$2.SelectorType.Universal, 50],
     [css_what_1$2.SelectorType.Tag, 30],
@@ -4526,7 +4534,7 @@ var pseudoSelectors = {};
 
 var filters = {};
 
-var lib = {};
+var lib$1 = {};
 
 var parse$4 = {};
 
@@ -4798,7 +4806,7 @@ compile$2.generate = generate;
 	}
 	exports.sequence = sequence;
 	
-} (lib));
+} (lib$1));
 
 (function (exports) {
 	var __importDefault = (commonjsGlobal && commonjsGlobal.__importDefault) || function (mod) {
@@ -4806,7 +4814,7 @@ compile$2.generate = generate;
 	};
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.filters = void 0;
-	var nth_check_1 = __importDefault(lib);
+	var nth_check_1 = __importDefault(lib$1);
 	var boolbase_1 = __importDefault(boolbase);
 	function getChildFunc(next, adapter) {
 	    return function (elem) {
@@ -5207,7 +5215,7 @@ var subselects = {};
 (function (exports) {
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.compilePseudoSelector = exports.aliases = exports.pseudos = exports.filters = void 0;
-	var css_what_1 = require$$0;
+	var css_what_1 = require$$0$1;
 	var filters_js_1 = filters;
 	Object.defineProperty(exports, "filters", { enumerable: true, get: function () { return filters_js_1.filters; } });
 	var pseudos_js_1 = pseudos;
@@ -5256,7 +5264,7 @@ Object.defineProperty(general, "__esModule", { value: true });
 general.compileGeneralSelector = void 0;
 var attributes_js_1 = attributes;
 var index_js_1 = pseudoSelectors;
-var css_what_1$1 = require$$0;
+var css_what_1$1 = require$$0$1;
 function getElementParent(node, adapter) {
     var parent = adapter.getParent(node);
     if (parent && adapter.isTag(parent)) {
@@ -5427,7 +5435,7 @@ var __importDefault$4 = (commonjsGlobal && commonjsGlobal.__importDefault) || fu
 };
 Object.defineProperty(compile$3, "__esModule", { value: true });
 compile$3.compileToken = compile$3.compileUnsafe = compile$3.compile = void 0;
-var css_what_1 = require$$0;
+var css_what_1 = require$$0$1;
 var boolbase_1 = __importDefault$4(boolbase);
 var sort_js_1 = __importStar(sort);
 var general_js_1 = general;
@@ -5574,7 +5582,7 @@ function reduceRules(a, b) {
 	};
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.aliases = exports.pseudos = exports.filters = exports.is = exports.selectOne = exports.selectAll = exports.prepareContext = exports._compileToken = exports._compileUnsafe = exports.compile = void 0;
-	var DomUtils = __importStar(lib$5);
+	var DomUtils = __importStar(lib$6);
 	var boolbase_1 = __importDefault(boolbase);
 	var compile_js_1 = compile$3;
 	var subselects_js_1 = subselects;
@@ -5699,7 +5707,7 @@ function reduceRules(a, b) {
 	Object.defineProperty(exports, "pseudos", { enumerable: true, get: function () { return index_js_1.pseudos; } });
 	Object.defineProperty(exports, "aliases", { enumerable: true, get: function () { return index_js_1.aliases; } });
 	
-} (lib$6));
+} (lib$7));
 
 var back = {};
 
@@ -6034,7 +6042,7 @@ var __importDefault$1 = (commonjsGlobal && commonjsGlobal.__importDefault) || fu
 };
 Object.defineProperty(html, "__esModule", { value: true });
 html.parse = html.base_parse = void 0;
-var css_select_1 = lib$6;
+var css_select_1 = lib$7;
 var he_1 = __importDefault$1(heExports);
 var back_1 = __importDefault$1(back);
 var matcher_1 = __importDefault$1(matcher);
@@ -7271,15 +7279,15 @@ function writeFile(dirPath, {
   try {
     const filePath = path.join(dirPath, name);
     fs.writeFileSync(filePath, content);
-    consola.start(colors.yellow(`Creating file: ${name}`));
-    consola.success(colors.green(`Create file: ${name} successfully!`));
+    consola.start(colors$2.yellow(`Creating file: ${name}`));
+    consola.success(colors$2.green(`Create file: ${name} successfully!`));
   } catch (error_) {
     if (error_.code === "ENOENT") {
-      consola.error(colors.red(`File does not exist: ${error_.message}`));
+      consola.error(colors$2.red(`File does not exist: ${error_.message}`));
     } else if (error_.code === "EISDIR") {
-      consola.error(colors.red(`Cannot write to a directory: ${error_.message}`));
+      consola.error(colors$2.red(`Cannot write to a directory: ${error_.message}`));
     } else {
-      consola.error(colors.red(`Error writing file: ${error_.message}`));
+      consola.error(colors$2.red(`Error writing file: ${error_.message}`));
     }
   }
 }
@@ -7765,7 +7773,7 @@ let config = {
 };
 const _initThirdPartyTemplate = async (isUsingAppBlock) => {
   try {
-    const rl = readline.createInterface({
+    const rl = readline__default.createInterface({
       input: process.stdin,
       output: process.stdout
     });
@@ -7774,13 +7782,13 @@ const _initThirdPartyTemplate = async (isUsingAppBlock) => {
       `Please enter third party url (Example: https://apps.shopify.com/easy-order-form): `
     );
     if (!sourceURL) {
-      consola.error(colors.red("No source URL found"));
+      consola.error(colors$2.red("No source URL found"));
       rl.close();
       return;
     }
     const url = new URL(sourceURL);
     if (url.hostname !== "apps.shopify.com") {
-      consola.error(colors.red("Source URL is not from Shopify App Store"));
+      consola.error(colors$2.red("Source URL is not from Shopify App Store"));
       rl.close();
       return;
     }
@@ -7789,7 +7797,7 @@ const _initThirdPartyTemplate = async (isUsingAppBlock) => {
       redirect: "follow"
     });
     if (request.status !== 200) {
-      consola.error(colors.red("Error fetching data"));
+      consola.error(colors$2.red("Error fetching data"));
       rl.close();
       return;
     }
@@ -7797,7 +7805,7 @@ const _initThirdPartyTemplate = async (isUsingAppBlock) => {
     const document = parse_2(pageContent);
     const adpHero = document.querySelector("#adp-hero");
     if (!adpHero) {
-      consola.error(colors.red("No adp-hero found"));
+      consola.error(colors$2.red("No adp-hero found"));
       rl.close();
       return;
     }
@@ -7839,13 +7847,13 @@ const _initThirdPartyTemplate = async (isUsingAppBlock) => {
     if (isUsingAppBlock) {
       const appName = await question(`Please enter app name: `);
       if (!appName) {
-        consola.error(colors.red("App name cannot be empty"));
+        consola.error(colors$2.red("App name cannot be empty"));
         rl.close();
         return;
       }
       const appId = await question(`Please enter app id: `);
       if (!appId) {
-        consola.error(colors.red("App id cannot be empty"));
+        consola.error(colors$2.red("App id cannot be empty"));
         rl.close();
         return;
       }
@@ -7854,7 +7862,7 @@ const _initThirdPartyTemplate = async (isUsingAppBlock) => {
 If there are multiple widgets please separate them by comma (Eg: widget1,widget2):`
       );
       if (!widgets) {
-        consola.error(colors.red("Please enter at least one widget"));
+        consola.error(colors$2.red("Please enter at least one widget"));
         rl.close();
         return;
       }
@@ -7910,7 +7918,7 @@ async function fileImported(fileName, fileType) {
   if (importer) {
     importer(fileName);
   } else {
-    consola.error(colors.red(`Unsupported file type: ${fileType}`));
+    consola.error(colors$2.red(`Unsupported file type: ${fileType}`));
   }
 }
 async function updateAppConfigContent(config2) {
@@ -7925,7 +7933,7 @@ async function updateAppConfigContent(config2) {
       if (err2) {
         consola.error("Error writing to the file:", err2);
       } else {
-        consola.success(colors.green("New block config added successfully!"));
+        consola.success(colors$2.green("New block config added successfully!"));
       }
     });
   });
@@ -7951,7 +7959,7 @@ async function updateAppSettingContent(config2) {
   ...${config2.capitalizedFileName},`
       );
       fs.writeFileSync(paths.thirdPartyAppSetting, data);
-      consola.success(colors.green("New block setting added successfully."));
+      consola.success(colors$2.green("New block setting added successfully."));
     }
   });
 }
@@ -7974,14 +7982,14 @@ ${importEnd}`;
 ${closingBrace}`;
     });
     fs.writeFileSync(paths.thirdPartyConstant, data);
-    consola.success(colors.green("File constant updated successfully."));
+    consola.success(colors$2.green("File constant updated successfully."));
   });
 }
 function updateFileContent(args) {
   const { filePath, newImport, newExport, newExportPropsType } = args;
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
-      consola.error(colors.red(`Error reading file: ${err}`));
+      consola.error(colors$2.red(`Error reading file: ${err}`));
       return;
     }
     const importRegex = /(import .+ from .+;\n)+/;
@@ -8008,7 +8016,7 @@ ${p1}
 };`
     );
     fs.writeFileSync(filePath, updatedContent);
-    consola.success(colors.green(`File updated successfully`));
+    consola.success(colors$2.green(`File updated successfully`));
   });
 }
 function importFileReact(fileName) {
@@ -8073,6 +8081,5300 @@ function importSettingFile(fileName) {
   });
 }
 
+const isUpKey = (key) => 
+// The up key
+key.name === 'up' ||
+    // Vim keybinding
+    key.name === 'k' ||
+    // Emacs keybinding
+    (key.ctrl && key.name === 'p');
+const isDownKey = (key) => 
+// The down key
+key.name === 'down' ||
+    // Vim keybinding
+    key.name === 'j' ||
+    // Emacs keybinding
+    (key.ctrl && key.name === 'n');
+const isBackspaceKey = (key) => key.name === 'backspace';
+const isNumberKey = (key) => '123456789'.includes(key.name);
+const isEnterKey = (key) => key.name === 'enter' || key.name === 'return';
+
+class CancelPromptError extends Error {
+    message = 'Prompt was canceled';
+}
+class ExitPromptError extends Error {
+}
+class HookError extends Error {
+}
+class ValidationError extends Error {
+}
+
+/* eslint @typescript-eslint/no-explicit-any: ["off"] */
+const hookStorage = new AsyncLocalStorage();
+function createStore(rl) {
+    const store = {
+        rl,
+        hooks: [],
+        hooksCleanup: [],
+        hooksEffect: [],
+        index: 0,
+        handleChange() { },
+    };
+    return store;
+}
+// Run callback in with the hook engine setup.
+function withHooks(rl, cb) {
+    const store = createStore(rl);
+    return hookStorage.run(store, () => {
+        cb(store);
+    });
+}
+// Safe getStore utility that'll return the store or throw if undefined.
+function getStore() {
+    const store = hookStorage.getStore();
+    if (!store) {
+        throw new HookError('[Inquirer] Hook functions can only be called from within a prompt');
+    }
+    return store;
+}
+function readline() {
+    return getStore().rl;
+}
+// Merge state updates happening within the callback function to avoid multiple renders.
+function withUpdates(fn) {
+    const wrapped = (...args) => {
+        const store = getStore();
+        let shouldUpdate = false;
+        const oldHandleChange = store.handleChange;
+        store.handleChange = () => {
+            shouldUpdate = true;
+        };
+        const returnValue = fn(...args);
+        if (shouldUpdate) {
+            oldHandleChange();
+        }
+        store.handleChange = oldHandleChange;
+        return returnValue;
+    };
+    return AsyncResource.bind(wrapped);
+}
+function withPointer(cb) {
+    const store = getStore();
+    const { index } = store;
+    const pointer = {
+        get() {
+            return store.hooks[index];
+        },
+        set(value) {
+            store.hooks[index] = value;
+        },
+        initialized: index in store.hooks,
+    };
+    const returnValue = cb(pointer);
+    store.index++;
+    return returnValue;
+}
+function handleChange() {
+    getStore().handleChange();
+}
+const effectScheduler = {
+    queue(cb) {
+        const store = getStore();
+        const { index } = store;
+        store.hooksEffect.push(() => {
+            store.hooksCleanup[index]?.();
+            const cleanFn = cb(readline());
+            if (cleanFn != null && typeof cleanFn !== 'function') {
+                throw new ValidationError('useEffect return value must be a cleanup function or nothing.');
+            }
+            store.hooksCleanup[index] = cleanFn;
+        });
+    },
+    run() {
+        const store = getStore();
+        withUpdates(() => {
+            store.hooksEffect.forEach((effect) => {
+                effect();
+            });
+            // Warning: Clean the hooks before exiting the `withUpdates` block.
+            // Failure to do so means an updates would hit the same effects again.
+            store.hooksEffect.length = 0;
+        })();
+    },
+};
+
+function useState(defaultValue) {
+    return withPointer((pointer) => {
+        const setFn = (newValue) => {
+            // Noop if the value is still the same.
+            if (pointer.get() !== newValue) {
+                pointer.set(newValue);
+                // Trigger re-render
+                handleChange();
+            }
+        };
+        if (pointer.initialized) {
+            return [pointer.get(), setFn];
+        }
+        const value = typeof defaultValue === 'function' ? defaultValue() : defaultValue;
+        pointer.set(value);
+        return [value, setFn];
+    });
+}
+
+function useEffect(cb, depArray) {
+    withPointer((pointer) => {
+        const oldDeps = pointer.get();
+        const hasChanged = !Array.isArray(oldDeps) || depArray.some((dep, i) => !Object.is(dep, oldDeps[i]));
+        if (hasChanged) {
+            effectScheduler.queue(cb);
+        }
+        pointer.set(depArray);
+    });
+}
+
+const tty = tty__default;
+
+// eslint-disable-next-line no-warning-comments
+// TODO: Use a better method when it's added to Node.js (https://github.com/nodejs/node/pull/40240)
+// Lots of optionals here to support Deno.
+const hasColors = tty?.WriteStream?.prototype?.hasColors?.() ?? false;
+
+const format = (open, close) => {
+	if (!hasColors) {
+		return input => input;
+	}
+
+	const openCode = `\u001B[${open}m`;
+	const closeCode = `\u001B[${close}m`;
+
+	return input => {
+		const string = input + ''; // eslint-disable-line no-implicit-coercion -- This is faster.
+		let index = string.indexOf(closeCode);
+
+		if (index === -1) {
+			// Note: Intentionally not using string interpolation for performance reasons.
+			return openCode + string + closeCode;
+		}
+
+		// Handle nested colors.
+
+		// We could have done this, but it's too slow (as of Node.js 22).
+		// return openCode + string.replaceAll(closeCode, openCode) + closeCode;
+
+		let result = openCode;
+		let lastIndex = 0;
+
+		while (index !== -1) {
+			result += string.slice(lastIndex, index) + openCode;
+			lastIndex = index + closeCode.length;
+			index = string.indexOf(closeCode, lastIndex);
+		}
+
+		result += string.slice(lastIndex) + closeCode;
+
+		return result;
+	};
+};
+
+const colors = {};
+
+colors.reset = format(0, 0);
+colors.bold = format(1, 22);
+colors.dim = format(2, 22);
+colors.italic = format(3, 23);
+colors.underline = format(4, 24);
+colors.overline = format(53, 55);
+colors.inverse = format(7, 27);
+colors.hidden = format(8, 28);
+colors.strikethrough = format(9, 29);
+
+colors.black = format(30, 39);
+colors.red = format(31, 39);
+colors.green = format(32, 39);
+colors.yellow = format(33, 39);
+colors.blue = format(34, 39);
+colors.magenta = format(35, 39);
+colors.cyan = format(36, 39);
+colors.white = format(37, 39);
+colors.gray = format(90, 39);
+
+colors.bgBlack = format(40, 49);
+colors.bgRed = format(41, 49);
+colors.bgGreen = format(42, 49);
+colors.bgYellow = format(43, 49);
+colors.bgBlue = format(44, 49);
+colors.bgMagenta = format(45, 49);
+colors.bgCyan = format(46, 49);
+colors.bgWhite = format(47, 49);
+colors.bgGray = format(100, 49);
+
+colors.redBright = format(91, 39);
+colors.greenBright = format(92, 39);
+colors.yellowBright = format(93, 39);
+colors.blueBright = format(94, 39);
+colors.magentaBright = format(95, 39);
+colors.cyanBright = format(96, 39);
+colors.whiteBright = format(97, 39);
+
+colors.bgRedBright = format(101, 49);
+colors.bgGreenBright = format(102, 49);
+colors.bgYellowBright = format(103, 49);
+colors.bgBlueBright = format(104, 49);
+colors.bgMagentaBright = format(105, 49);
+colors.bgCyanBright = format(106, 49);
+colors.bgWhiteBright = format(107, 49);
+
+var yoctocolorsCjs = colors;
+
+const colors$1 = /*@__PURE__*/getDefaultExportFromCjs(yoctocolorsCjs);
+
+const dots = {
+	interval: 80,
+	frames: [
+		"⠋",
+		"⠙",
+		"⠹",
+		"⠸",
+		"⠼",
+		"⠴",
+		"⠦",
+		"⠧",
+		"⠇",
+		"⠏"
+	]
+};
+const dots2 = {
+	interval: 80,
+	frames: [
+		"⣾",
+		"⣽",
+		"⣻",
+		"⢿",
+		"⡿",
+		"⣟",
+		"⣯",
+		"⣷"
+	]
+};
+const dots3 = {
+	interval: 80,
+	frames: [
+		"⠋",
+		"⠙",
+		"⠚",
+		"⠞",
+		"⠖",
+		"⠦",
+		"⠴",
+		"⠲",
+		"⠳",
+		"⠓"
+	]
+};
+const dots4 = {
+	interval: 80,
+	frames: [
+		"⠄",
+		"⠆",
+		"⠇",
+		"⠋",
+		"⠙",
+		"⠸",
+		"⠰",
+		"⠠",
+		"⠰",
+		"⠸",
+		"⠙",
+		"⠋",
+		"⠇",
+		"⠆"
+	]
+};
+const dots5 = {
+	interval: 80,
+	frames: [
+		"⠋",
+		"⠙",
+		"⠚",
+		"⠒",
+		"⠂",
+		"⠂",
+		"⠒",
+		"⠲",
+		"⠴",
+		"⠦",
+		"⠖",
+		"⠒",
+		"⠐",
+		"⠐",
+		"⠒",
+		"⠓",
+		"⠋"
+	]
+};
+const dots6 = {
+	interval: 80,
+	frames: [
+		"⠁",
+		"⠉",
+		"⠙",
+		"⠚",
+		"⠒",
+		"⠂",
+		"⠂",
+		"⠒",
+		"⠲",
+		"⠴",
+		"⠤",
+		"⠄",
+		"⠄",
+		"⠤",
+		"⠴",
+		"⠲",
+		"⠒",
+		"⠂",
+		"⠂",
+		"⠒",
+		"⠚",
+		"⠙",
+		"⠉",
+		"⠁"
+	]
+};
+const dots7 = {
+	interval: 80,
+	frames: [
+		"⠈",
+		"⠉",
+		"⠋",
+		"⠓",
+		"⠒",
+		"⠐",
+		"⠐",
+		"⠒",
+		"⠖",
+		"⠦",
+		"⠤",
+		"⠠",
+		"⠠",
+		"⠤",
+		"⠦",
+		"⠖",
+		"⠒",
+		"⠐",
+		"⠐",
+		"⠒",
+		"⠓",
+		"⠋",
+		"⠉",
+		"⠈"
+	]
+};
+const dots8 = {
+	interval: 80,
+	frames: [
+		"⠁",
+		"⠁",
+		"⠉",
+		"⠙",
+		"⠚",
+		"⠒",
+		"⠂",
+		"⠂",
+		"⠒",
+		"⠲",
+		"⠴",
+		"⠤",
+		"⠄",
+		"⠄",
+		"⠤",
+		"⠠",
+		"⠠",
+		"⠤",
+		"⠦",
+		"⠖",
+		"⠒",
+		"⠐",
+		"⠐",
+		"⠒",
+		"⠓",
+		"⠋",
+		"⠉",
+		"⠈",
+		"⠈"
+	]
+};
+const dots9 = {
+	interval: 80,
+	frames: [
+		"⢹",
+		"⢺",
+		"⢼",
+		"⣸",
+		"⣇",
+		"⡧",
+		"⡗",
+		"⡏"
+	]
+};
+const dots10 = {
+	interval: 80,
+	frames: [
+		"⢄",
+		"⢂",
+		"⢁",
+		"⡁",
+		"⡈",
+		"⡐",
+		"⡠"
+	]
+};
+const dots11 = {
+	interval: 100,
+	frames: [
+		"⠁",
+		"⠂",
+		"⠄",
+		"⡀",
+		"⢀",
+		"⠠",
+		"⠐",
+		"⠈"
+	]
+};
+const dots12 = {
+	interval: 80,
+	frames: [
+		"⢀⠀",
+		"⡀⠀",
+		"⠄⠀",
+		"⢂⠀",
+		"⡂⠀",
+		"⠅⠀",
+		"⢃⠀",
+		"⡃⠀",
+		"⠍⠀",
+		"⢋⠀",
+		"⡋⠀",
+		"⠍⠁",
+		"⢋⠁",
+		"⡋⠁",
+		"⠍⠉",
+		"⠋⠉",
+		"⠋⠉",
+		"⠉⠙",
+		"⠉⠙",
+		"⠉⠩",
+		"⠈⢙",
+		"⠈⡙",
+		"⢈⠩",
+		"⡀⢙",
+		"⠄⡙",
+		"⢂⠩",
+		"⡂⢘",
+		"⠅⡘",
+		"⢃⠨",
+		"⡃⢐",
+		"⠍⡐",
+		"⢋⠠",
+		"⡋⢀",
+		"⠍⡁",
+		"⢋⠁",
+		"⡋⠁",
+		"⠍⠉",
+		"⠋⠉",
+		"⠋⠉",
+		"⠉⠙",
+		"⠉⠙",
+		"⠉⠩",
+		"⠈⢙",
+		"⠈⡙",
+		"⠈⠩",
+		"⠀⢙",
+		"⠀⡙",
+		"⠀⠩",
+		"⠀⢘",
+		"⠀⡘",
+		"⠀⠨",
+		"⠀⢐",
+		"⠀⡐",
+		"⠀⠠",
+		"⠀⢀",
+		"⠀⡀"
+	]
+};
+const dots13 = {
+	interval: 80,
+	frames: [
+		"⣼",
+		"⣹",
+		"⢻",
+		"⠿",
+		"⡟",
+		"⣏",
+		"⣧",
+		"⣶"
+	]
+};
+const dots8Bit = {
+	interval: 80,
+	frames: [
+		"⠀",
+		"⠁",
+		"⠂",
+		"⠃",
+		"⠄",
+		"⠅",
+		"⠆",
+		"⠇",
+		"⡀",
+		"⡁",
+		"⡂",
+		"⡃",
+		"⡄",
+		"⡅",
+		"⡆",
+		"⡇",
+		"⠈",
+		"⠉",
+		"⠊",
+		"⠋",
+		"⠌",
+		"⠍",
+		"⠎",
+		"⠏",
+		"⡈",
+		"⡉",
+		"⡊",
+		"⡋",
+		"⡌",
+		"⡍",
+		"⡎",
+		"⡏",
+		"⠐",
+		"⠑",
+		"⠒",
+		"⠓",
+		"⠔",
+		"⠕",
+		"⠖",
+		"⠗",
+		"⡐",
+		"⡑",
+		"⡒",
+		"⡓",
+		"⡔",
+		"⡕",
+		"⡖",
+		"⡗",
+		"⠘",
+		"⠙",
+		"⠚",
+		"⠛",
+		"⠜",
+		"⠝",
+		"⠞",
+		"⠟",
+		"⡘",
+		"⡙",
+		"⡚",
+		"⡛",
+		"⡜",
+		"⡝",
+		"⡞",
+		"⡟",
+		"⠠",
+		"⠡",
+		"⠢",
+		"⠣",
+		"⠤",
+		"⠥",
+		"⠦",
+		"⠧",
+		"⡠",
+		"⡡",
+		"⡢",
+		"⡣",
+		"⡤",
+		"⡥",
+		"⡦",
+		"⡧",
+		"⠨",
+		"⠩",
+		"⠪",
+		"⠫",
+		"⠬",
+		"⠭",
+		"⠮",
+		"⠯",
+		"⡨",
+		"⡩",
+		"⡪",
+		"⡫",
+		"⡬",
+		"⡭",
+		"⡮",
+		"⡯",
+		"⠰",
+		"⠱",
+		"⠲",
+		"⠳",
+		"⠴",
+		"⠵",
+		"⠶",
+		"⠷",
+		"⡰",
+		"⡱",
+		"⡲",
+		"⡳",
+		"⡴",
+		"⡵",
+		"⡶",
+		"⡷",
+		"⠸",
+		"⠹",
+		"⠺",
+		"⠻",
+		"⠼",
+		"⠽",
+		"⠾",
+		"⠿",
+		"⡸",
+		"⡹",
+		"⡺",
+		"⡻",
+		"⡼",
+		"⡽",
+		"⡾",
+		"⡿",
+		"⢀",
+		"⢁",
+		"⢂",
+		"⢃",
+		"⢄",
+		"⢅",
+		"⢆",
+		"⢇",
+		"⣀",
+		"⣁",
+		"⣂",
+		"⣃",
+		"⣄",
+		"⣅",
+		"⣆",
+		"⣇",
+		"⢈",
+		"⢉",
+		"⢊",
+		"⢋",
+		"⢌",
+		"⢍",
+		"⢎",
+		"⢏",
+		"⣈",
+		"⣉",
+		"⣊",
+		"⣋",
+		"⣌",
+		"⣍",
+		"⣎",
+		"⣏",
+		"⢐",
+		"⢑",
+		"⢒",
+		"⢓",
+		"⢔",
+		"⢕",
+		"⢖",
+		"⢗",
+		"⣐",
+		"⣑",
+		"⣒",
+		"⣓",
+		"⣔",
+		"⣕",
+		"⣖",
+		"⣗",
+		"⢘",
+		"⢙",
+		"⢚",
+		"⢛",
+		"⢜",
+		"⢝",
+		"⢞",
+		"⢟",
+		"⣘",
+		"⣙",
+		"⣚",
+		"⣛",
+		"⣜",
+		"⣝",
+		"⣞",
+		"⣟",
+		"⢠",
+		"⢡",
+		"⢢",
+		"⢣",
+		"⢤",
+		"⢥",
+		"⢦",
+		"⢧",
+		"⣠",
+		"⣡",
+		"⣢",
+		"⣣",
+		"⣤",
+		"⣥",
+		"⣦",
+		"⣧",
+		"⢨",
+		"⢩",
+		"⢪",
+		"⢫",
+		"⢬",
+		"⢭",
+		"⢮",
+		"⢯",
+		"⣨",
+		"⣩",
+		"⣪",
+		"⣫",
+		"⣬",
+		"⣭",
+		"⣮",
+		"⣯",
+		"⢰",
+		"⢱",
+		"⢲",
+		"⢳",
+		"⢴",
+		"⢵",
+		"⢶",
+		"⢷",
+		"⣰",
+		"⣱",
+		"⣲",
+		"⣳",
+		"⣴",
+		"⣵",
+		"⣶",
+		"⣷",
+		"⢸",
+		"⢹",
+		"⢺",
+		"⢻",
+		"⢼",
+		"⢽",
+		"⢾",
+		"⢿",
+		"⣸",
+		"⣹",
+		"⣺",
+		"⣻",
+		"⣼",
+		"⣽",
+		"⣾",
+		"⣿"
+	]
+};
+const sand = {
+	interval: 80,
+	frames: [
+		"⠁",
+		"⠂",
+		"⠄",
+		"⡀",
+		"⡈",
+		"⡐",
+		"⡠",
+		"⣀",
+		"⣁",
+		"⣂",
+		"⣄",
+		"⣌",
+		"⣔",
+		"⣤",
+		"⣥",
+		"⣦",
+		"⣮",
+		"⣶",
+		"⣷",
+		"⣿",
+		"⡿",
+		"⠿",
+		"⢟",
+		"⠟",
+		"⡛",
+		"⠛",
+		"⠫",
+		"⢋",
+		"⠋",
+		"⠍",
+		"⡉",
+		"⠉",
+		"⠑",
+		"⠡",
+		"⢁"
+	]
+};
+const line = {
+	interval: 130,
+	frames: [
+		"-",
+		"\\",
+		"|",
+		"/"
+	]
+};
+const line2 = {
+	interval: 100,
+	frames: [
+		"⠂",
+		"-",
+		"–",
+		"—",
+		"–",
+		"-"
+	]
+};
+const pipe = {
+	interval: 100,
+	frames: [
+		"┤",
+		"┘",
+		"┴",
+		"└",
+		"├",
+		"┌",
+		"┬",
+		"┐"
+	]
+};
+const simpleDots = {
+	interval: 400,
+	frames: [
+		".  ",
+		".. ",
+		"...",
+		"   "
+	]
+};
+const simpleDotsScrolling = {
+	interval: 200,
+	frames: [
+		".  ",
+		".. ",
+		"...",
+		" ..",
+		"  .",
+		"   "
+	]
+};
+const star = {
+	interval: 70,
+	frames: [
+		"✶",
+		"✸",
+		"✹",
+		"✺",
+		"✹",
+		"✷"
+	]
+};
+const star2 = {
+	interval: 80,
+	frames: [
+		"+",
+		"x",
+		"*"
+	]
+};
+const flip = {
+	interval: 70,
+	frames: [
+		"_",
+		"_",
+		"_",
+		"-",
+		"`",
+		"`",
+		"'",
+		"´",
+		"-",
+		"_",
+		"_",
+		"_"
+	]
+};
+const hamburger = {
+	interval: 100,
+	frames: [
+		"☱",
+		"☲",
+		"☴"
+	]
+};
+const growVertical = {
+	interval: 120,
+	frames: [
+		"▁",
+		"▃",
+		"▄",
+		"▅",
+		"▆",
+		"▇",
+		"▆",
+		"▅",
+		"▄",
+		"▃"
+	]
+};
+const growHorizontal = {
+	interval: 120,
+	frames: [
+		"▏",
+		"▎",
+		"▍",
+		"▌",
+		"▋",
+		"▊",
+		"▉",
+		"▊",
+		"▋",
+		"▌",
+		"▍",
+		"▎"
+	]
+};
+const balloon = {
+	interval: 140,
+	frames: [
+		" ",
+		".",
+		"o",
+		"O",
+		"@",
+		"*",
+		" "
+	]
+};
+const balloon2 = {
+	interval: 120,
+	frames: [
+		".",
+		"o",
+		"O",
+		"°",
+		"O",
+		"o",
+		"."
+	]
+};
+const noise = {
+	interval: 100,
+	frames: [
+		"▓",
+		"▒",
+		"░"
+	]
+};
+const bounce = {
+	interval: 120,
+	frames: [
+		"⠁",
+		"⠂",
+		"⠄",
+		"⠂"
+	]
+};
+const boxBounce = {
+	interval: 120,
+	frames: [
+		"▖",
+		"▘",
+		"▝",
+		"▗"
+	]
+};
+const boxBounce2 = {
+	interval: 100,
+	frames: [
+		"▌",
+		"▀",
+		"▐",
+		"▄"
+	]
+};
+const triangle = {
+	interval: 50,
+	frames: [
+		"◢",
+		"◣",
+		"◤",
+		"◥"
+	]
+};
+const binary = {
+	interval: 80,
+	frames: [
+		"010010",
+		"001100",
+		"100101",
+		"111010",
+		"111101",
+		"010111",
+		"101011",
+		"111000",
+		"110011",
+		"110101"
+	]
+};
+const arc = {
+	interval: 100,
+	frames: [
+		"◜",
+		"◠",
+		"◝",
+		"◞",
+		"◡",
+		"◟"
+	]
+};
+const circle = {
+	interval: 120,
+	frames: [
+		"◡",
+		"⊙",
+		"◠"
+	]
+};
+const squareCorners = {
+	interval: 180,
+	frames: [
+		"◰",
+		"◳",
+		"◲",
+		"◱"
+	]
+};
+const circleQuarters = {
+	interval: 120,
+	frames: [
+		"◴",
+		"◷",
+		"◶",
+		"◵"
+	]
+};
+const circleHalves = {
+	interval: 50,
+	frames: [
+		"◐",
+		"◓",
+		"◑",
+		"◒"
+	]
+};
+const squish = {
+	interval: 100,
+	frames: [
+		"╫",
+		"╪"
+	]
+};
+const toggle = {
+	interval: 250,
+	frames: [
+		"⊶",
+		"⊷"
+	]
+};
+const toggle2 = {
+	interval: 80,
+	frames: [
+		"▫",
+		"▪"
+	]
+};
+const toggle3 = {
+	interval: 120,
+	frames: [
+		"□",
+		"■"
+	]
+};
+const toggle4 = {
+	interval: 100,
+	frames: [
+		"■",
+		"□",
+		"▪",
+		"▫"
+	]
+};
+const toggle5 = {
+	interval: 100,
+	frames: [
+		"▮",
+		"▯"
+	]
+};
+const toggle6 = {
+	interval: 300,
+	frames: [
+		"ဝ",
+		"၀"
+	]
+};
+const toggle7 = {
+	interval: 80,
+	frames: [
+		"⦾",
+		"⦿"
+	]
+};
+const toggle8 = {
+	interval: 100,
+	frames: [
+		"◍",
+		"◌"
+	]
+};
+const toggle9 = {
+	interval: 100,
+	frames: [
+		"◉",
+		"◎"
+	]
+};
+const toggle10 = {
+	interval: 100,
+	frames: [
+		"㊂",
+		"㊀",
+		"㊁"
+	]
+};
+const toggle11 = {
+	interval: 50,
+	frames: [
+		"⧇",
+		"⧆"
+	]
+};
+const toggle12 = {
+	interval: 120,
+	frames: [
+		"☗",
+		"☖"
+	]
+};
+const toggle13 = {
+	interval: 80,
+	frames: [
+		"=",
+		"*",
+		"-"
+	]
+};
+const arrow = {
+	interval: 100,
+	frames: [
+		"←",
+		"↖",
+		"↑",
+		"↗",
+		"→",
+		"↘",
+		"↓",
+		"↙"
+	]
+};
+const arrow2 = {
+	interval: 80,
+	frames: [
+		"⬆️ ",
+		"↗️ ",
+		"➡️ ",
+		"↘️ ",
+		"⬇️ ",
+		"↙️ ",
+		"⬅️ ",
+		"↖️ "
+	]
+};
+const arrow3 = {
+	interval: 120,
+	frames: [
+		"▹▹▹▹▹",
+		"▸▹▹▹▹",
+		"▹▸▹▹▹",
+		"▹▹▸▹▹",
+		"▹▹▹▸▹",
+		"▹▹▹▹▸"
+	]
+};
+const bouncingBar = {
+	interval: 80,
+	frames: [
+		"[    ]",
+		"[=   ]",
+		"[==  ]",
+		"[=== ]",
+		"[====]",
+		"[ ===]",
+		"[  ==]",
+		"[   =]",
+		"[    ]",
+		"[   =]",
+		"[  ==]",
+		"[ ===]",
+		"[====]",
+		"[=== ]",
+		"[==  ]",
+		"[=   ]"
+	]
+};
+const bouncingBall = {
+	interval: 80,
+	frames: [
+		"( ●    )",
+		"(  ●   )",
+		"(   ●  )",
+		"(    ● )",
+		"(     ●)",
+		"(    ● )",
+		"(   ●  )",
+		"(  ●   )",
+		"( ●    )",
+		"(●     )"
+	]
+};
+const smiley = {
+	interval: 200,
+	frames: [
+		"😄 ",
+		"😝 "
+	]
+};
+const monkey = {
+	interval: 300,
+	frames: [
+		"🙈 ",
+		"🙈 ",
+		"🙉 ",
+		"🙊 "
+	]
+};
+const hearts = {
+	interval: 100,
+	frames: [
+		"💛 ",
+		"💙 ",
+		"💜 ",
+		"💚 ",
+		"❤️ "
+	]
+};
+const clock = {
+	interval: 100,
+	frames: [
+		"🕛 ",
+		"🕐 ",
+		"🕑 ",
+		"🕒 ",
+		"🕓 ",
+		"🕔 ",
+		"🕕 ",
+		"🕖 ",
+		"🕗 ",
+		"🕘 ",
+		"🕙 ",
+		"🕚 "
+	]
+};
+const earth = {
+	interval: 180,
+	frames: [
+		"🌍 ",
+		"🌎 ",
+		"🌏 "
+	]
+};
+const material = {
+	interval: 17,
+	frames: [
+		"█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"██████▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"██████▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"███████▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"████████▁▁▁▁▁▁▁▁▁▁▁▁",
+		"█████████▁▁▁▁▁▁▁▁▁▁▁",
+		"█████████▁▁▁▁▁▁▁▁▁▁▁",
+		"██████████▁▁▁▁▁▁▁▁▁▁",
+		"███████████▁▁▁▁▁▁▁▁▁",
+		"█████████████▁▁▁▁▁▁▁",
+		"██████████████▁▁▁▁▁▁",
+		"██████████████▁▁▁▁▁▁",
+		"▁██████████████▁▁▁▁▁",
+		"▁██████████████▁▁▁▁▁",
+		"▁██████████████▁▁▁▁▁",
+		"▁▁██████████████▁▁▁▁",
+		"▁▁▁██████████████▁▁▁",
+		"▁▁▁▁█████████████▁▁▁",
+		"▁▁▁▁██████████████▁▁",
+		"▁▁▁▁██████████████▁▁",
+		"▁▁▁▁▁██████████████▁",
+		"▁▁▁▁▁██████████████▁",
+		"▁▁▁▁▁██████████████▁",
+		"▁▁▁▁▁▁██████████████",
+		"▁▁▁▁▁▁██████████████",
+		"▁▁▁▁▁▁▁█████████████",
+		"▁▁▁▁▁▁▁█████████████",
+		"▁▁▁▁▁▁▁▁████████████",
+		"▁▁▁▁▁▁▁▁████████████",
+		"▁▁▁▁▁▁▁▁▁███████████",
+		"▁▁▁▁▁▁▁▁▁███████████",
+		"▁▁▁▁▁▁▁▁▁▁██████████",
+		"▁▁▁▁▁▁▁▁▁▁██████████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁████████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁███████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁██████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█████",
+		"█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████",
+		"██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███",
+		"██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███",
+		"███▁▁▁▁▁▁▁▁▁▁▁▁▁▁███",
+		"████▁▁▁▁▁▁▁▁▁▁▁▁▁▁██",
+		"█████▁▁▁▁▁▁▁▁▁▁▁▁▁▁█",
+		"█████▁▁▁▁▁▁▁▁▁▁▁▁▁▁█",
+		"██████▁▁▁▁▁▁▁▁▁▁▁▁▁█",
+		"████████▁▁▁▁▁▁▁▁▁▁▁▁",
+		"█████████▁▁▁▁▁▁▁▁▁▁▁",
+		"█████████▁▁▁▁▁▁▁▁▁▁▁",
+		"█████████▁▁▁▁▁▁▁▁▁▁▁",
+		"█████████▁▁▁▁▁▁▁▁▁▁▁",
+		"███████████▁▁▁▁▁▁▁▁▁",
+		"████████████▁▁▁▁▁▁▁▁",
+		"████████████▁▁▁▁▁▁▁▁",
+		"██████████████▁▁▁▁▁▁",
+		"██████████████▁▁▁▁▁▁",
+		"▁██████████████▁▁▁▁▁",
+		"▁██████████████▁▁▁▁▁",
+		"▁▁▁█████████████▁▁▁▁",
+		"▁▁▁▁▁████████████▁▁▁",
+		"▁▁▁▁▁████████████▁▁▁",
+		"▁▁▁▁▁▁███████████▁▁▁",
+		"▁▁▁▁▁▁▁▁█████████▁▁▁",
+		"▁▁▁▁▁▁▁▁█████████▁▁▁",
+		"▁▁▁▁▁▁▁▁▁█████████▁▁",
+		"▁▁▁▁▁▁▁▁▁█████████▁▁",
+		"▁▁▁▁▁▁▁▁▁▁█████████▁",
+		"▁▁▁▁▁▁▁▁▁▁▁████████▁",
+		"▁▁▁▁▁▁▁▁▁▁▁████████▁",
+		"▁▁▁▁▁▁▁▁▁▁▁▁███████▁",
+		"▁▁▁▁▁▁▁▁▁▁▁▁███████▁",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁███████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁███████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+		"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁"
+	]
+};
+const moon = {
+	interval: 80,
+	frames: [
+		"🌑 ",
+		"🌒 ",
+		"🌓 ",
+		"🌔 ",
+		"🌕 ",
+		"🌖 ",
+		"🌗 ",
+		"🌘 "
+	]
+};
+const runner = {
+	interval: 140,
+	frames: [
+		"🚶 ",
+		"🏃 "
+	]
+};
+const pong = {
+	interval: 80,
+	frames: [
+		"▐⠂       ▌",
+		"▐⠈       ▌",
+		"▐ ⠂      ▌",
+		"▐ ⠠      ▌",
+		"▐  ⡀     ▌",
+		"▐  ⠠     ▌",
+		"▐   ⠂    ▌",
+		"▐   ⠈    ▌",
+		"▐    ⠂   ▌",
+		"▐    ⠠   ▌",
+		"▐     ⡀  ▌",
+		"▐     ⠠  ▌",
+		"▐      ⠂ ▌",
+		"▐      ⠈ ▌",
+		"▐       ⠂▌",
+		"▐       ⠠▌",
+		"▐       ⡀▌",
+		"▐      ⠠ ▌",
+		"▐      ⠂ ▌",
+		"▐     ⠈  ▌",
+		"▐     ⠂  ▌",
+		"▐    ⠠   ▌",
+		"▐    ⡀   ▌",
+		"▐   ⠠    ▌",
+		"▐   ⠂    ▌",
+		"▐  ⠈     ▌",
+		"▐  ⠂     ▌",
+		"▐ ⠠      ▌",
+		"▐ ⡀      ▌",
+		"▐⠠       ▌"
+	]
+};
+const shark = {
+	interval: 120,
+	frames: [
+		"▐|\\____________▌",
+		"▐_|\\___________▌",
+		"▐__|\\__________▌",
+		"▐___|\\_________▌",
+		"▐____|\\________▌",
+		"▐_____|\\_______▌",
+		"▐______|\\______▌",
+		"▐_______|\\_____▌",
+		"▐________|\\____▌",
+		"▐_________|\\___▌",
+		"▐__________|\\__▌",
+		"▐___________|\\_▌",
+		"▐____________|\\▌",
+		"▐____________/|▌",
+		"▐___________/|_▌",
+		"▐__________/|__▌",
+		"▐_________/|___▌",
+		"▐________/|____▌",
+		"▐_______/|_____▌",
+		"▐______/|______▌",
+		"▐_____/|_______▌",
+		"▐____/|________▌",
+		"▐___/|_________▌",
+		"▐__/|__________▌",
+		"▐_/|___________▌",
+		"▐/|____________▌"
+	]
+};
+const dqpb = {
+	interval: 100,
+	frames: [
+		"d",
+		"q",
+		"p",
+		"b"
+	]
+};
+const weather = {
+	interval: 100,
+	frames: [
+		"☀️ ",
+		"☀️ ",
+		"☀️ ",
+		"🌤 ",
+		"⛅️ ",
+		"🌥 ",
+		"☁️ ",
+		"🌧 ",
+		"🌨 ",
+		"🌧 ",
+		"🌨 ",
+		"🌧 ",
+		"🌨 ",
+		"⛈ ",
+		"🌨 ",
+		"🌧 ",
+		"🌨 ",
+		"☁️ ",
+		"🌥 ",
+		"⛅️ ",
+		"🌤 ",
+		"☀️ ",
+		"☀️ "
+	]
+};
+const christmas = {
+	interval: 400,
+	frames: [
+		"🌲",
+		"🎄"
+	]
+};
+const grenade = {
+	interval: 80,
+	frames: [
+		"،  ",
+		"′  ",
+		" ´ ",
+		" ‾ ",
+		"  ⸌",
+		"  ⸊",
+		"  |",
+		"  ⁎",
+		"  ⁕",
+		" ෴ ",
+		"  ⁓",
+		"   ",
+		"   ",
+		"   "
+	]
+};
+const point = {
+	interval: 125,
+	frames: [
+		"∙∙∙",
+		"●∙∙",
+		"∙●∙",
+		"∙∙●",
+		"∙∙∙"
+	]
+};
+const layer = {
+	interval: 150,
+	frames: [
+		"-",
+		"=",
+		"≡"
+	]
+};
+const betaWave = {
+	interval: 80,
+	frames: [
+		"ρββββββ",
+		"βρβββββ",
+		"ββρββββ",
+		"βββρβββ",
+		"ββββρββ",
+		"βββββρβ",
+		"ββββββρ"
+	]
+};
+const fingerDance = {
+	interval: 160,
+	frames: [
+		"🤘 ",
+		"🤟 ",
+		"🖖 ",
+		"✋ ",
+		"🤚 ",
+		"👆 "
+	]
+};
+const fistBump = {
+	interval: 80,
+	frames: [
+		"🤜　　　　🤛 ",
+		"🤜　　　　🤛 ",
+		"🤜　　　　🤛 ",
+		"　🤜　　🤛　 ",
+		"　　🤜🤛　　 ",
+		"　🤜✨🤛　　 ",
+		"🤜　✨　🤛　 "
+	]
+};
+const soccerHeader = {
+	interval: 80,
+	frames: [
+		" 🧑⚽️       🧑 ",
+		"🧑  ⚽️      🧑 ",
+		"🧑   ⚽️     🧑 ",
+		"🧑    ⚽️    🧑 ",
+		"🧑     ⚽️   🧑 ",
+		"🧑      ⚽️  🧑 ",
+		"🧑       ⚽️🧑  ",
+		"🧑      ⚽️  🧑 ",
+		"🧑     ⚽️   🧑 ",
+		"🧑    ⚽️    🧑 ",
+		"🧑   ⚽️     🧑 ",
+		"🧑  ⚽️      🧑 "
+	]
+};
+const mindblown = {
+	interval: 160,
+	frames: [
+		"😐 ",
+		"😐 ",
+		"😮 ",
+		"😮 ",
+		"😦 ",
+		"😦 ",
+		"😧 ",
+		"😧 ",
+		"🤯 ",
+		"💥 ",
+		"✨ ",
+		"　 ",
+		"　 ",
+		"　 "
+	]
+};
+const speaker = {
+	interval: 160,
+	frames: [
+		"🔈 ",
+		"🔉 ",
+		"🔊 ",
+		"🔉 "
+	]
+};
+const orangePulse = {
+	interval: 100,
+	frames: [
+		"🔸 ",
+		"🔶 ",
+		"🟠 ",
+		"🟠 ",
+		"🔶 "
+	]
+};
+const bluePulse = {
+	interval: 100,
+	frames: [
+		"🔹 ",
+		"🔷 ",
+		"🔵 ",
+		"🔵 ",
+		"🔷 "
+	]
+};
+const orangeBluePulse = {
+	interval: 100,
+	frames: [
+		"🔸 ",
+		"🔶 ",
+		"🟠 ",
+		"🟠 ",
+		"🔶 ",
+		"🔹 ",
+		"🔷 ",
+		"🔵 ",
+		"🔵 ",
+		"🔷 "
+	]
+};
+const timeTravel = {
+	interval: 100,
+	frames: [
+		"🕛 ",
+		"🕚 ",
+		"🕙 ",
+		"🕘 ",
+		"🕗 ",
+		"🕖 ",
+		"🕕 ",
+		"🕔 ",
+		"🕓 ",
+		"🕒 ",
+		"🕑 ",
+		"🕐 "
+	]
+};
+const aesthetic = {
+	interval: 80,
+	frames: [
+		"▰▱▱▱▱▱▱",
+		"▰▰▱▱▱▱▱",
+		"▰▰▰▱▱▱▱",
+		"▰▰▰▰▱▱▱",
+		"▰▰▰▰▰▱▱",
+		"▰▰▰▰▰▰▱",
+		"▰▰▰▰▰▰▰",
+		"▰▱▱▱▱▱▱"
+	]
+};
+const dwarfFortress = {
+	interval: 80,
+	frames: [
+		" ██████£££  ",
+		"☺██████£££  ",
+		"☺██████£££  ",
+		"☺▓█████£££  ",
+		"☺▓█████£££  ",
+		"☺▒█████£££  ",
+		"☺▒█████£££  ",
+		"☺░█████£££  ",
+		"☺░█████£££  ",
+		"☺ █████£££  ",
+		" ☺█████£££  ",
+		" ☺█████£££  ",
+		" ☺▓████£££  ",
+		" ☺▓████£££  ",
+		" ☺▒████£££  ",
+		" ☺▒████£££  ",
+		" ☺░████£££  ",
+		" ☺░████£££  ",
+		" ☺ ████£££  ",
+		"  ☺████£££  ",
+		"  ☺████£££  ",
+		"  ☺▓███£££  ",
+		"  ☺▓███£££  ",
+		"  ☺▒███£££  ",
+		"  ☺▒███£££  ",
+		"  ☺░███£££  ",
+		"  ☺░███£££  ",
+		"  ☺ ███£££  ",
+		"   ☺███£££  ",
+		"   ☺███£££  ",
+		"   ☺▓██£££  ",
+		"   ☺▓██£££  ",
+		"   ☺▒██£££  ",
+		"   ☺▒██£££  ",
+		"   ☺░██£££  ",
+		"   ☺░██£££  ",
+		"   ☺ ██£££  ",
+		"    ☺██£££  ",
+		"    ☺██£££  ",
+		"    ☺▓█£££  ",
+		"    ☺▓█£££  ",
+		"    ☺▒█£££  ",
+		"    ☺▒█£££  ",
+		"    ☺░█£££  ",
+		"    ☺░█£££  ",
+		"    ☺ █£££  ",
+		"     ☺█£££  ",
+		"     ☺█£££  ",
+		"     ☺▓£££  ",
+		"     ☺▓£££  ",
+		"     ☺▒£££  ",
+		"     ☺▒£££  ",
+		"     ☺░£££  ",
+		"     ☺░£££  ",
+		"     ☺ £££  ",
+		"      ☺£££  ",
+		"      ☺£££  ",
+		"      ☺▓££  ",
+		"      ☺▓££  ",
+		"      ☺▒££  ",
+		"      ☺▒££  ",
+		"      ☺░££  ",
+		"      ☺░££  ",
+		"      ☺ ££  ",
+		"       ☺££  ",
+		"       ☺££  ",
+		"       ☺▓£  ",
+		"       ☺▓£  ",
+		"       ☺▒£  ",
+		"       ☺▒£  ",
+		"       ☺░£  ",
+		"       ☺░£  ",
+		"       ☺ £  ",
+		"        ☺£  ",
+		"        ☺£  ",
+		"        ☺▓  ",
+		"        ☺▓  ",
+		"        ☺▒  ",
+		"        ☺▒  ",
+		"        ☺░  ",
+		"        ☺░  ",
+		"        ☺   ",
+		"        ☺  &",
+		"        ☺ ☼&",
+		"       ☺ ☼ &",
+		"       ☺☼  &",
+		"      ☺☼  & ",
+		"      ‼   & ",
+		"     ☺   &  ",
+		"    ‼    &  ",
+		"   ☺    &   ",
+		"  ‼     &   ",
+		" ☺     &    ",
+		"‼      &    ",
+		"      &     ",
+		"      &     ",
+		"     &   ░  ",
+		"     &   ▒  ",
+		"    &    ▓  ",
+		"    &    £  ",
+		"   &    ░£  ",
+		"   &    ▒£  ",
+		"  &     ▓£  ",
+		"  &     ££  ",
+		" &     ░££  ",
+		" &     ▒££  ",
+		"&      ▓££  ",
+		"&      £££  ",
+		"      ░£££  ",
+		"      ▒£££  ",
+		"      ▓£££  ",
+		"      █£££  ",
+		"     ░█£££  ",
+		"     ▒█£££  ",
+		"     ▓█£££  ",
+		"     ██£££  ",
+		"    ░██£££  ",
+		"    ▒██£££  ",
+		"    ▓██£££  ",
+		"    ███£££  ",
+		"   ░███£££  ",
+		"   ▒███£££  ",
+		"   ▓███£££  ",
+		"   ████£££  ",
+		"  ░████£££  ",
+		"  ▒████£££  ",
+		"  ▓████£££  ",
+		"  █████£££  ",
+		" ░█████£££  ",
+		" ▒█████£££  ",
+		" ▓█████£££  ",
+		" ██████£££  ",
+		" ██████£££  "
+	]
+};
+const spinners$2 = {
+	dots: dots,
+	dots2: dots2,
+	dots3: dots3,
+	dots4: dots4,
+	dots5: dots5,
+	dots6: dots6,
+	dots7: dots7,
+	dots8: dots8,
+	dots9: dots9,
+	dots10: dots10,
+	dots11: dots11,
+	dots12: dots12,
+	dots13: dots13,
+	dots8Bit: dots8Bit,
+	sand: sand,
+	line: line,
+	line2: line2,
+	pipe: pipe,
+	simpleDots: simpleDots,
+	simpleDotsScrolling: simpleDotsScrolling,
+	star: star,
+	star2: star2,
+	flip: flip,
+	hamburger: hamburger,
+	growVertical: growVertical,
+	growHorizontal: growHorizontal,
+	balloon: balloon,
+	balloon2: balloon2,
+	noise: noise,
+	bounce: bounce,
+	boxBounce: boxBounce,
+	boxBounce2: boxBounce2,
+	triangle: triangle,
+	binary: binary,
+	arc: arc,
+	circle: circle,
+	squareCorners: squareCorners,
+	circleQuarters: circleQuarters,
+	circleHalves: circleHalves,
+	squish: squish,
+	toggle: toggle,
+	toggle2: toggle2,
+	toggle3: toggle3,
+	toggle4: toggle4,
+	toggle5: toggle5,
+	toggle6: toggle6,
+	toggle7: toggle7,
+	toggle8: toggle8,
+	toggle9: toggle9,
+	toggle10: toggle10,
+	toggle11: toggle11,
+	toggle12: toggle12,
+	toggle13: toggle13,
+	arrow: arrow,
+	arrow2: arrow2,
+	arrow3: arrow3,
+	bouncingBar: bouncingBar,
+	bouncingBall: bouncingBall,
+	smiley: smiley,
+	monkey: monkey,
+	hearts: hearts,
+	clock: clock,
+	earth: earth,
+	material: material,
+	moon: moon,
+	runner: runner,
+	pong: pong,
+	shark: shark,
+	dqpb: dqpb,
+	weather: weather,
+	christmas: christmas,
+	grenade: grenade,
+	point: point,
+	layer: layer,
+	betaWave: betaWave,
+	fingerDance: fingerDance,
+	fistBump: fistBump,
+	soccerHeader: soccerHeader,
+	mindblown: mindblown,
+	speaker: speaker,
+	orangePulse: orangePulse,
+	bluePulse: bluePulse,
+	orangeBluePulse: orangeBluePulse,
+	timeTravel: timeTravel,
+	aesthetic: aesthetic,
+	dwarfFortress: dwarfFortress
+};
+
+const spinners$3 = {
+	__proto__: null,
+	aesthetic: aesthetic,
+	arc: arc,
+	arrow: arrow,
+	arrow2: arrow2,
+	arrow3: arrow3,
+	balloon: balloon,
+	balloon2: balloon2,
+	betaWave: betaWave,
+	binary: binary,
+	bluePulse: bluePulse,
+	bounce: bounce,
+	bouncingBall: bouncingBall,
+	bouncingBar: bouncingBar,
+	boxBounce: boxBounce,
+	boxBounce2: boxBounce2,
+	christmas: christmas,
+	circle: circle,
+	circleHalves: circleHalves,
+	circleQuarters: circleQuarters,
+	clock: clock,
+	default: spinners$2,
+	dots: dots,
+	dots10: dots10,
+	dots11: dots11,
+	dots12: dots12,
+	dots13: dots13,
+	dots2: dots2,
+	dots3: dots3,
+	dots4: dots4,
+	dots5: dots5,
+	dots6: dots6,
+	dots7: dots7,
+	dots8: dots8,
+	dots8Bit: dots8Bit,
+	dots9: dots9,
+	dqpb: dqpb,
+	dwarfFortress: dwarfFortress,
+	earth: earth,
+	fingerDance: fingerDance,
+	fistBump: fistBump,
+	flip: flip,
+	grenade: grenade,
+	growHorizontal: growHorizontal,
+	growVertical: growVertical,
+	hamburger: hamburger,
+	hearts: hearts,
+	layer: layer,
+	line: line,
+	line2: line2,
+	material: material,
+	mindblown: mindblown,
+	monkey: monkey,
+	moon: moon,
+	noise: noise,
+	orangeBluePulse: orangeBluePulse,
+	orangePulse: orangePulse,
+	pipe: pipe,
+	point: point,
+	pong: pong,
+	runner: runner,
+	sand: sand,
+	shark: shark,
+	simpleDots: simpleDots,
+	simpleDotsScrolling: simpleDotsScrolling,
+	smiley: smiley,
+	soccerHeader: soccerHeader,
+	speaker: speaker,
+	squareCorners: squareCorners,
+	squish: squish,
+	star: star,
+	star2: star2,
+	timeTravel: timeTravel,
+	toggle: toggle,
+	toggle10: toggle10,
+	toggle11: toggle11,
+	toggle12: toggle12,
+	toggle13: toggle13,
+	toggle2: toggle2,
+	toggle3: toggle3,
+	toggle4: toggle4,
+	toggle5: toggle5,
+	toggle6: toggle6,
+	toggle7: toggle7,
+	toggle8: toggle8,
+	toggle9: toggle9,
+	triangle: triangle,
+	weather: weather
+};
+
+const require$$0 = /*@__PURE__*/getAugmentedNamespace(spinners$3);
+
+const spinners = Object.assign({}, require$$0); // eslint-disable-line import/extensions
+
+const spinnersList = Object.keys(spinners);
+
+Object.defineProperty(spinners, 'random', {
+	get() {
+		const randomIndex = Math.floor(Math.random() * spinnersList.length);
+		const spinnerName = spinnersList[randomIndex];
+		return spinners[spinnerName];
+	}
+});
+
+var cliSpinners = spinners;
+
+const spinners$1 = /*@__PURE__*/getDefaultExportFromCjs(cliSpinners);
+
+const defaultTheme = {
+    prefix: colors$1.green('?'),
+    spinner: {
+        interval: spinners$1.dots.interval,
+        frames: spinners$1.dots.frames.map((frame) => colors$1.yellow(frame)),
+    },
+    style: {
+        answer: colors$1.cyan,
+        message: colors$1.bold,
+        error: (text) => colors$1.red(`> ${text}`),
+        defaultAnswer: (text) => colors$1.dim(`(${text})`),
+        help: colors$1.dim,
+        highlight: colors$1.cyan,
+        key: (text) => colors$1.cyan(colors$1.bold(`<${text}>`)),
+    },
+};
+
+function isPlainObject(value) {
+    if (typeof value !== 'object' || value === null)
+        return false;
+    let proto = value;
+    while (Object.getPrototypeOf(proto) !== null) {
+        proto = Object.getPrototypeOf(proto);
+    }
+    return Object.getPrototypeOf(value) === proto;
+}
+function deepMerge(...objects) {
+    const output = {};
+    for (const obj of objects) {
+        for (const [key, value] of Object.entries(obj)) {
+            const prevValue = output[key];
+            output[key] =
+                isPlainObject(prevValue) && isPlainObject(value)
+                    ? deepMerge(prevValue, value)
+                    : value;
+        }
+    }
+    return output;
+}
+function makeTheme(...themes) {
+    const themesToMerge = [
+        defaultTheme,
+        ...themes.filter((theme) => theme != null),
+    ];
+    return deepMerge(...themesToMerge);
+}
+
+function usePrefix({ isLoading = false, theme, }) {
+    const [showLoader, setShowLoader] = useState(false);
+    const [tick, setTick] = useState(0);
+    const { prefix, spinner } = makeTheme(theme);
+    useEffect(() => {
+        if (isLoading) {
+            let tickInterval;
+            let inc = -1;
+            // Delay displaying spinner by 300ms, to avoid flickering
+            const delayTimeout = setTimeout(AsyncResource.bind(() => {
+                setShowLoader(true);
+                tickInterval = setInterval(AsyncResource.bind(() => {
+                    inc = inc + 1;
+                    setTick(inc % spinner.frames.length);
+                }), spinner.interval);
+            }), 300);
+            return () => {
+                clearTimeout(delayTimeout);
+                clearInterval(tickInterval);
+            };
+        }
+        else {
+            setShowLoader(false);
+        }
+    }, [isLoading]);
+    if (showLoader) {
+        return spinner.frames[tick];
+    }
+    return prefix;
+}
+
+function useMemo(fn, dependencies) {
+    return withPointer((pointer) => {
+        const prev = pointer.get();
+        if (!prev ||
+            prev.dependencies.length !== dependencies.length ||
+            prev.dependencies.some((dep, i) => dep !== dependencies[i])) {
+            const value = fn();
+            pointer.set({ value, dependencies });
+            return value;
+        }
+        return prev.value;
+    });
+}
+
+function useRef(val) {
+    return useState({ current: val })[0];
+}
+
+function useKeypress(userHandler) {
+    const signal = useRef(userHandler);
+    signal.current = userHandler;
+    useEffect((rl) => {
+        const handler = withUpdates((_input, event) => {
+            signal.current(event, rl);
+        });
+        rl.input.on('keypress', handler);
+        return () => {
+            rl.input.removeListener('keypress', handler);
+        };
+    }, []);
+}
+
+var cliWidth_1 = cliWidth;
+
+function normalizeOpts(options) {
+  const defaultOpts = {
+    defaultWidth: 0,
+    output: process.stdout,
+    tty: require$$0$2,
+  };
+
+  if (!options) {
+    return defaultOpts;
+  }
+
+  Object.keys(defaultOpts).forEach(function (key) {
+    if (!options[key]) {
+      options[key] = defaultOpts[key];
+    }
+  });
+
+  return options;
+}
+
+function cliWidth(options) {
+  const opts = normalizeOpts(options);
+
+  if (opts.output.getWindowSize) {
+    return opts.output.getWindowSize()[0] || opts.defaultWidth;
+  }
+
+  if (opts.tty.getWindowSize) {
+    return opts.tty.getWindowSize()[1] || opts.defaultWidth;
+  }
+
+  if (opts.output.columns) {
+    return opts.output.columns;
+  }
+
+  if (process.env.CLI_WIDTH) {
+    const width = parseInt(process.env.CLI_WIDTH, 10);
+
+    if (!isNaN(width) && width !== 0) {
+      return width;
+    }
+  }
+
+  return opts.defaultWidth;
+}
+
+const cliWidth$1 = /*@__PURE__*/getDefaultExportFromCjs(cliWidth_1);
+
+var stringWidth$2 = {exports: {}};
+
+var ansiRegex$1 = ({onlyFirst = false} = {}) => {
+	const pattern = [
+		'[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)',
+		'(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))'
+	].join('|');
+
+	return new RegExp(pattern, onlyFirst ? undefined : 'g');
+};
+
+const ansiRegex = ansiRegex$1;
+
+var stripAnsi$2 = string => typeof string === 'string' ? string.replace(ansiRegex(), '') : string;
+
+const stripAnsi$3 = /*@__PURE__*/getDefaultExportFromCjs(stripAnsi$2);
+
+var isFullwidthCodePoint$2 = {exports: {}};
+
+/* eslint-disable yoda */
+
+const isFullwidthCodePoint$1 = codePoint => {
+	if (Number.isNaN(codePoint)) {
+		return false;
+	}
+
+	// Code points are derived from:
+	// http://www.unix.org/Public/UNIDATA/EastAsianWidth.txt
+	if (
+		codePoint >= 0x1100 && (
+			codePoint <= 0x115F || // Hangul Jamo
+			codePoint === 0x2329 || // LEFT-POINTING ANGLE BRACKET
+			codePoint === 0x232A || // RIGHT-POINTING ANGLE BRACKET
+			// CJK Radicals Supplement .. Enclosed CJK Letters and Months
+			(0x2E80 <= codePoint && codePoint <= 0x3247 && codePoint !== 0x303F) ||
+			// Enclosed CJK Letters and Months .. CJK Unified Ideographs Extension A
+			(0x3250 <= codePoint && codePoint <= 0x4DBF) ||
+			// CJK Unified Ideographs .. Yi Radicals
+			(0x4E00 <= codePoint && codePoint <= 0xA4C6) ||
+			// Hangul Jamo Extended-A
+			(0xA960 <= codePoint && codePoint <= 0xA97C) ||
+			// Hangul Syllables
+			(0xAC00 <= codePoint && codePoint <= 0xD7A3) ||
+			// CJK Compatibility Ideographs
+			(0xF900 <= codePoint && codePoint <= 0xFAFF) ||
+			// Vertical Forms
+			(0xFE10 <= codePoint && codePoint <= 0xFE19) ||
+			// CJK Compatibility Forms .. Small Form Variants
+			(0xFE30 <= codePoint && codePoint <= 0xFE6B) ||
+			// Halfwidth and Fullwidth Forms
+			(0xFF01 <= codePoint && codePoint <= 0xFF60) ||
+			(0xFFE0 <= codePoint && codePoint <= 0xFFE6) ||
+			// Kana Supplement
+			(0x1B000 <= codePoint && codePoint <= 0x1B001) ||
+			// Enclosed Ideographic Supplement
+			(0x1F200 <= codePoint && codePoint <= 0x1F251) ||
+			// CJK Unified Ideographs Extension B .. Tertiary Ideographic Plane
+			(0x20000 <= codePoint && codePoint <= 0x3FFFD)
+		)
+	) {
+		return true;
+	}
+
+	return false;
+};
+
+isFullwidthCodePoint$2.exports = isFullwidthCodePoint$1;
+isFullwidthCodePoint$2.exports.default = isFullwidthCodePoint$1;
+
+var isFullwidthCodePointExports = isFullwidthCodePoint$2.exports;
+
+var emojiRegex$1 = function () {
+  // https://mths.be/emoji
+  return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F|\uD83D\uDC68(?:\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68\uD83C\uDFFB|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|[\u2695\u2696\u2708]\uFE0F|\uD83D[\uDC66\uDC67]|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708])\uFE0F|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C[\uDFFB-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)\uD83C\uDFFB|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB\uDFFC])|\uD83D\uDC69(?:\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB-\uDFFD])|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|(?:(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)\uFE0F|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\u200D[\u2640\u2642])|\uD83C\uDFF4\u200D\u2620)\uFE0F|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF6\uD83C\uDDE6|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDB5\uDDB6\uDDBB\uDDD2-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5\uDEEB\uDEEC\uDEF4-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+};
+
+const stripAnsi$1 = stripAnsi$2;
+const isFullwidthCodePoint = isFullwidthCodePointExports;
+const emojiRegex = emojiRegex$1;
+
+const stringWidth$1 = string => {
+	if (typeof string !== 'string' || string.length === 0) {
+		return 0;
+	}
+
+	string = stripAnsi$1(string);
+
+	if (string.length === 0) {
+		return 0;
+	}
+
+	string = string.replace(emojiRegex(), '  ');
+
+	let width = 0;
+
+	for (let i = 0; i < string.length; i++) {
+		const code = string.codePointAt(i);
+
+		// Ignore control characters
+		if (code <= 0x1F || (code >= 0x7F && code <= 0x9F)) {
+			continue;
+		}
+
+		// Ignore combining characters
+		if (code >= 0x300 && code <= 0x36F) {
+			continue;
+		}
+
+		// Surrogates
+		if (code > 0xFFFF) {
+			i++;
+		}
+
+		width += isFullwidthCodePoint(code) ? 2 : 1;
+	}
+
+	return width;
+};
+
+stringWidth$2.exports = stringWidth$1;
+// TODO: remove this in the next major version
+stringWidth$2.exports.default = stringWidth$1;
+
+var stringWidthExports = stringWidth$2.exports;
+
+var ansiStyles$1 = {exports: {}};
+
+var colorName;
+var hasRequiredColorName;
+
+function requireColorName () {
+	if (hasRequiredColorName) return colorName;
+	hasRequiredColorName = 1;
+
+	colorName = {
+		"aliceblue": [240, 248, 255],
+		"antiquewhite": [250, 235, 215],
+		"aqua": [0, 255, 255],
+		"aquamarine": [127, 255, 212],
+		"azure": [240, 255, 255],
+		"beige": [245, 245, 220],
+		"bisque": [255, 228, 196],
+		"black": [0, 0, 0],
+		"blanchedalmond": [255, 235, 205],
+		"blue": [0, 0, 255],
+		"blueviolet": [138, 43, 226],
+		"brown": [165, 42, 42],
+		"burlywood": [222, 184, 135],
+		"cadetblue": [95, 158, 160],
+		"chartreuse": [127, 255, 0],
+		"chocolate": [210, 105, 30],
+		"coral": [255, 127, 80],
+		"cornflowerblue": [100, 149, 237],
+		"cornsilk": [255, 248, 220],
+		"crimson": [220, 20, 60],
+		"cyan": [0, 255, 255],
+		"darkblue": [0, 0, 139],
+		"darkcyan": [0, 139, 139],
+		"darkgoldenrod": [184, 134, 11],
+		"darkgray": [169, 169, 169],
+		"darkgreen": [0, 100, 0],
+		"darkgrey": [169, 169, 169],
+		"darkkhaki": [189, 183, 107],
+		"darkmagenta": [139, 0, 139],
+		"darkolivegreen": [85, 107, 47],
+		"darkorange": [255, 140, 0],
+		"darkorchid": [153, 50, 204],
+		"darkred": [139, 0, 0],
+		"darksalmon": [233, 150, 122],
+		"darkseagreen": [143, 188, 143],
+		"darkslateblue": [72, 61, 139],
+		"darkslategray": [47, 79, 79],
+		"darkslategrey": [47, 79, 79],
+		"darkturquoise": [0, 206, 209],
+		"darkviolet": [148, 0, 211],
+		"deeppink": [255, 20, 147],
+		"deepskyblue": [0, 191, 255],
+		"dimgray": [105, 105, 105],
+		"dimgrey": [105, 105, 105],
+		"dodgerblue": [30, 144, 255],
+		"firebrick": [178, 34, 34],
+		"floralwhite": [255, 250, 240],
+		"forestgreen": [34, 139, 34],
+		"fuchsia": [255, 0, 255],
+		"gainsboro": [220, 220, 220],
+		"ghostwhite": [248, 248, 255],
+		"gold": [255, 215, 0],
+		"goldenrod": [218, 165, 32],
+		"gray": [128, 128, 128],
+		"green": [0, 128, 0],
+		"greenyellow": [173, 255, 47],
+		"grey": [128, 128, 128],
+		"honeydew": [240, 255, 240],
+		"hotpink": [255, 105, 180],
+		"indianred": [205, 92, 92],
+		"indigo": [75, 0, 130],
+		"ivory": [255, 255, 240],
+		"khaki": [240, 230, 140],
+		"lavender": [230, 230, 250],
+		"lavenderblush": [255, 240, 245],
+		"lawngreen": [124, 252, 0],
+		"lemonchiffon": [255, 250, 205],
+		"lightblue": [173, 216, 230],
+		"lightcoral": [240, 128, 128],
+		"lightcyan": [224, 255, 255],
+		"lightgoldenrodyellow": [250, 250, 210],
+		"lightgray": [211, 211, 211],
+		"lightgreen": [144, 238, 144],
+		"lightgrey": [211, 211, 211],
+		"lightpink": [255, 182, 193],
+		"lightsalmon": [255, 160, 122],
+		"lightseagreen": [32, 178, 170],
+		"lightskyblue": [135, 206, 250],
+		"lightslategray": [119, 136, 153],
+		"lightslategrey": [119, 136, 153],
+		"lightsteelblue": [176, 196, 222],
+		"lightyellow": [255, 255, 224],
+		"lime": [0, 255, 0],
+		"limegreen": [50, 205, 50],
+		"linen": [250, 240, 230],
+		"magenta": [255, 0, 255],
+		"maroon": [128, 0, 0],
+		"mediumaquamarine": [102, 205, 170],
+		"mediumblue": [0, 0, 205],
+		"mediumorchid": [186, 85, 211],
+		"mediumpurple": [147, 112, 219],
+		"mediumseagreen": [60, 179, 113],
+		"mediumslateblue": [123, 104, 238],
+		"mediumspringgreen": [0, 250, 154],
+		"mediumturquoise": [72, 209, 204],
+		"mediumvioletred": [199, 21, 133],
+		"midnightblue": [25, 25, 112],
+		"mintcream": [245, 255, 250],
+		"mistyrose": [255, 228, 225],
+		"moccasin": [255, 228, 181],
+		"navajowhite": [255, 222, 173],
+		"navy": [0, 0, 128],
+		"oldlace": [253, 245, 230],
+		"olive": [128, 128, 0],
+		"olivedrab": [107, 142, 35],
+		"orange": [255, 165, 0],
+		"orangered": [255, 69, 0],
+		"orchid": [218, 112, 214],
+		"palegoldenrod": [238, 232, 170],
+		"palegreen": [152, 251, 152],
+		"paleturquoise": [175, 238, 238],
+		"palevioletred": [219, 112, 147],
+		"papayawhip": [255, 239, 213],
+		"peachpuff": [255, 218, 185],
+		"peru": [205, 133, 63],
+		"pink": [255, 192, 203],
+		"plum": [221, 160, 221],
+		"powderblue": [176, 224, 230],
+		"purple": [128, 0, 128],
+		"rebeccapurple": [102, 51, 153],
+		"red": [255, 0, 0],
+		"rosybrown": [188, 143, 143],
+		"royalblue": [65, 105, 225],
+		"saddlebrown": [139, 69, 19],
+		"salmon": [250, 128, 114],
+		"sandybrown": [244, 164, 96],
+		"seagreen": [46, 139, 87],
+		"seashell": [255, 245, 238],
+		"sienna": [160, 82, 45],
+		"silver": [192, 192, 192],
+		"skyblue": [135, 206, 235],
+		"slateblue": [106, 90, 205],
+		"slategray": [112, 128, 144],
+		"slategrey": [112, 128, 144],
+		"snow": [255, 250, 250],
+		"springgreen": [0, 255, 127],
+		"steelblue": [70, 130, 180],
+		"tan": [210, 180, 140],
+		"teal": [0, 128, 128],
+		"thistle": [216, 191, 216],
+		"tomato": [255, 99, 71],
+		"turquoise": [64, 224, 208],
+		"violet": [238, 130, 238],
+		"wheat": [245, 222, 179],
+		"white": [255, 255, 255],
+		"whitesmoke": [245, 245, 245],
+		"yellow": [255, 255, 0],
+		"yellowgreen": [154, 205, 50]
+	};
+	return colorName;
+}
+
+/* MIT license */
+
+var conversions;
+var hasRequiredConversions;
+
+function requireConversions () {
+	if (hasRequiredConversions) return conversions;
+	hasRequiredConversions = 1;
+	/* eslint-disable no-mixed-operators */
+	const cssKeywords = requireColorName();
+
+	// NOTE: conversions should only return primitive values (i.e. arrays, or
+	//       values that give correct `typeof` results).
+	//       do not use box values types (i.e. Number(), String(), etc.)
+
+	const reverseKeywords = {};
+	for (const key of Object.keys(cssKeywords)) {
+		reverseKeywords[cssKeywords[key]] = key;
+	}
+
+	const convert = {
+		rgb: {channels: 3, labels: 'rgb'},
+		hsl: {channels: 3, labels: 'hsl'},
+		hsv: {channels: 3, labels: 'hsv'},
+		hwb: {channels: 3, labels: 'hwb'},
+		cmyk: {channels: 4, labels: 'cmyk'},
+		xyz: {channels: 3, labels: 'xyz'},
+		lab: {channels: 3, labels: 'lab'},
+		lch: {channels: 3, labels: 'lch'},
+		hex: {channels: 1, labels: ['hex']},
+		keyword: {channels: 1, labels: ['keyword']},
+		ansi16: {channels: 1, labels: ['ansi16']},
+		ansi256: {channels: 1, labels: ['ansi256']},
+		hcg: {channels: 3, labels: ['h', 'c', 'g']},
+		apple: {channels: 3, labels: ['r16', 'g16', 'b16']},
+		gray: {channels: 1, labels: ['gray']}
+	};
+
+	conversions = convert;
+
+	// Hide .channels and .labels properties
+	for (const model of Object.keys(convert)) {
+		if (!('channels' in convert[model])) {
+			throw new Error('missing channels property: ' + model);
+		}
+
+		if (!('labels' in convert[model])) {
+			throw new Error('missing channel labels property: ' + model);
+		}
+
+		if (convert[model].labels.length !== convert[model].channels) {
+			throw new Error('channel and label counts mismatch: ' + model);
+		}
+
+		const {channels, labels} = convert[model];
+		delete convert[model].channels;
+		delete convert[model].labels;
+		Object.defineProperty(convert[model], 'channels', {value: channels});
+		Object.defineProperty(convert[model], 'labels', {value: labels});
+	}
+
+	convert.rgb.hsl = function (rgb) {
+		const r = rgb[0] / 255;
+		const g = rgb[1] / 255;
+		const b = rgb[2] / 255;
+		const min = Math.min(r, g, b);
+		const max = Math.max(r, g, b);
+		const delta = max - min;
+		let h;
+		let s;
+
+		if (max === min) {
+			h = 0;
+		} else if (r === max) {
+			h = (g - b) / delta;
+		} else if (g === max) {
+			h = 2 + (b - r) / delta;
+		} else if (b === max) {
+			h = 4 + (r - g) / delta;
+		}
+
+		h = Math.min(h * 60, 360);
+
+		if (h < 0) {
+			h += 360;
+		}
+
+		const l = (min + max) / 2;
+
+		if (max === min) {
+			s = 0;
+		} else if (l <= 0.5) {
+			s = delta / (max + min);
+		} else {
+			s = delta / (2 - max - min);
+		}
+
+		return [h, s * 100, l * 100];
+	};
+
+	convert.rgb.hsv = function (rgb) {
+		let rdif;
+		let gdif;
+		let bdif;
+		let h;
+		let s;
+
+		const r = rgb[0] / 255;
+		const g = rgb[1] / 255;
+		const b = rgb[2] / 255;
+		const v = Math.max(r, g, b);
+		const diff = v - Math.min(r, g, b);
+		const diffc = function (c) {
+			return (v - c) / 6 / diff + 1 / 2;
+		};
+
+		if (diff === 0) {
+			h = 0;
+			s = 0;
+		} else {
+			s = diff / v;
+			rdif = diffc(r);
+			gdif = diffc(g);
+			bdif = diffc(b);
+
+			if (r === v) {
+				h = bdif - gdif;
+			} else if (g === v) {
+				h = (1 / 3) + rdif - bdif;
+			} else if (b === v) {
+				h = (2 / 3) + gdif - rdif;
+			}
+
+			if (h < 0) {
+				h += 1;
+			} else if (h > 1) {
+				h -= 1;
+			}
+		}
+
+		return [
+			h * 360,
+			s * 100,
+			v * 100
+		];
+	};
+
+	convert.rgb.hwb = function (rgb) {
+		const r = rgb[0];
+		const g = rgb[1];
+		let b = rgb[2];
+		const h = convert.rgb.hsl(rgb)[0];
+		const w = 1 / 255 * Math.min(r, Math.min(g, b));
+
+		b = 1 - 1 / 255 * Math.max(r, Math.max(g, b));
+
+		return [h, w * 100, b * 100];
+	};
+
+	convert.rgb.cmyk = function (rgb) {
+		const r = rgb[0] / 255;
+		const g = rgb[1] / 255;
+		const b = rgb[2] / 255;
+
+		const k = Math.min(1 - r, 1 - g, 1 - b);
+		const c = (1 - r - k) / (1 - k) || 0;
+		const m = (1 - g - k) / (1 - k) || 0;
+		const y = (1 - b - k) / (1 - k) || 0;
+
+		return [c * 100, m * 100, y * 100, k * 100];
+	};
+
+	function comparativeDistance(x, y) {
+		/*
+			See https://en.m.wikipedia.org/wiki/Euclidean_distance#Squared_Euclidean_distance
+		*/
+		return (
+			((x[0] - y[0]) ** 2) +
+			((x[1] - y[1]) ** 2) +
+			((x[2] - y[2]) ** 2)
+		);
+	}
+
+	convert.rgb.keyword = function (rgb) {
+		const reversed = reverseKeywords[rgb];
+		if (reversed) {
+			return reversed;
+		}
+
+		let currentClosestDistance = Infinity;
+		let currentClosestKeyword;
+
+		for (const keyword of Object.keys(cssKeywords)) {
+			const value = cssKeywords[keyword];
+
+			// Compute comparative distance
+			const distance = comparativeDistance(rgb, value);
+
+			// Check if its less, if so set as closest
+			if (distance < currentClosestDistance) {
+				currentClosestDistance = distance;
+				currentClosestKeyword = keyword;
+			}
+		}
+
+		return currentClosestKeyword;
+	};
+
+	convert.keyword.rgb = function (keyword) {
+		return cssKeywords[keyword];
+	};
+
+	convert.rgb.xyz = function (rgb) {
+		let r = rgb[0] / 255;
+		let g = rgb[1] / 255;
+		let b = rgb[2] / 255;
+
+		// Assume sRGB
+		r = r > 0.04045 ? (((r + 0.055) / 1.055) ** 2.4) : (r / 12.92);
+		g = g > 0.04045 ? (((g + 0.055) / 1.055) ** 2.4) : (g / 12.92);
+		b = b > 0.04045 ? (((b + 0.055) / 1.055) ** 2.4) : (b / 12.92);
+
+		const x = (r * 0.4124) + (g * 0.3576) + (b * 0.1805);
+		const y = (r * 0.2126) + (g * 0.7152) + (b * 0.0722);
+		const z = (r * 0.0193) + (g * 0.1192) + (b * 0.9505);
+
+		return [x * 100, y * 100, z * 100];
+	};
+
+	convert.rgb.lab = function (rgb) {
+		const xyz = convert.rgb.xyz(rgb);
+		let x = xyz[0];
+		let y = xyz[1];
+		let z = xyz[2];
+
+		x /= 95.047;
+		y /= 100;
+		z /= 108.883;
+
+		x = x > 0.008856 ? (x ** (1 / 3)) : (7.787 * x) + (16 / 116);
+		y = y > 0.008856 ? (y ** (1 / 3)) : (7.787 * y) + (16 / 116);
+		z = z > 0.008856 ? (z ** (1 / 3)) : (7.787 * z) + (16 / 116);
+
+		const l = (116 * y) - 16;
+		const a = 500 * (x - y);
+		const b = 200 * (y - z);
+
+		return [l, a, b];
+	};
+
+	convert.hsl.rgb = function (hsl) {
+		const h = hsl[0] / 360;
+		const s = hsl[1] / 100;
+		const l = hsl[2] / 100;
+		let t2;
+		let t3;
+		let val;
+
+		if (s === 0) {
+			val = l * 255;
+			return [val, val, val];
+		}
+
+		if (l < 0.5) {
+			t2 = l * (1 + s);
+		} else {
+			t2 = l + s - l * s;
+		}
+
+		const t1 = 2 * l - t2;
+
+		const rgb = [0, 0, 0];
+		for (let i = 0; i < 3; i++) {
+			t3 = h + 1 / 3 * -(i - 1);
+			if (t3 < 0) {
+				t3++;
+			}
+
+			if (t3 > 1) {
+				t3--;
+			}
+
+			if (6 * t3 < 1) {
+				val = t1 + (t2 - t1) * 6 * t3;
+			} else if (2 * t3 < 1) {
+				val = t2;
+			} else if (3 * t3 < 2) {
+				val = t1 + (t2 - t1) * (2 / 3 - t3) * 6;
+			} else {
+				val = t1;
+			}
+
+			rgb[i] = val * 255;
+		}
+
+		return rgb;
+	};
+
+	convert.hsl.hsv = function (hsl) {
+		const h = hsl[0];
+		let s = hsl[1] / 100;
+		let l = hsl[2] / 100;
+		let smin = s;
+		const lmin = Math.max(l, 0.01);
+
+		l *= 2;
+		s *= (l <= 1) ? l : 2 - l;
+		smin *= lmin <= 1 ? lmin : 2 - lmin;
+		const v = (l + s) / 2;
+		const sv = l === 0 ? (2 * smin) / (lmin + smin) : (2 * s) / (l + s);
+
+		return [h, sv * 100, v * 100];
+	};
+
+	convert.hsv.rgb = function (hsv) {
+		const h = hsv[0] / 60;
+		const s = hsv[1] / 100;
+		let v = hsv[2] / 100;
+		const hi = Math.floor(h) % 6;
+
+		const f = h - Math.floor(h);
+		const p = 255 * v * (1 - s);
+		const q = 255 * v * (1 - (s * f));
+		const t = 255 * v * (1 - (s * (1 - f)));
+		v *= 255;
+
+		switch (hi) {
+			case 0:
+				return [v, t, p];
+			case 1:
+				return [q, v, p];
+			case 2:
+				return [p, v, t];
+			case 3:
+				return [p, q, v];
+			case 4:
+				return [t, p, v];
+			case 5:
+				return [v, p, q];
+		}
+	};
+
+	convert.hsv.hsl = function (hsv) {
+		const h = hsv[0];
+		const s = hsv[1] / 100;
+		const v = hsv[2] / 100;
+		const vmin = Math.max(v, 0.01);
+		let sl;
+		let l;
+
+		l = (2 - s) * v;
+		const lmin = (2 - s) * vmin;
+		sl = s * vmin;
+		sl /= (lmin <= 1) ? lmin : 2 - lmin;
+		sl = sl || 0;
+		l /= 2;
+
+		return [h, sl * 100, l * 100];
+	};
+
+	// http://dev.w3.org/csswg/css-color/#hwb-to-rgb
+	convert.hwb.rgb = function (hwb) {
+		const h = hwb[0] / 360;
+		let wh = hwb[1] / 100;
+		let bl = hwb[2] / 100;
+		const ratio = wh + bl;
+		let f;
+
+		// Wh + bl cant be > 1
+		if (ratio > 1) {
+			wh /= ratio;
+			bl /= ratio;
+		}
+
+		const i = Math.floor(6 * h);
+		const v = 1 - bl;
+		f = 6 * h - i;
+
+		if ((i & 0x01) !== 0) {
+			f = 1 - f;
+		}
+
+		const n = wh + f * (v - wh); // Linear interpolation
+
+		let r;
+		let g;
+		let b;
+		/* eslint-disable max-statements-per-line,no-multi-spaces */
+		switch (i) {
+			default:
+			case 6:
+			case 0: r = v;  g = n;  b = wh; break;
+			case 1: r = n;  g = v;  b = wh; break;
+			case 2: r = wh; g = v;  b = n; break;
+			case 3: r = wh; g = n;  b = v; break;
+			case 4: r = n;  g = wh; b = v; break;
+			case 5: r = v;  g = wh; b = n; break;
+		}
+		/* eslint-enable max-statements-per-line,no-multi-spaces */
+
+		return [r * 255, g * 255, b * 255];
+	};
+
+	convert.cmyk.rgb = function (cmyk) {
+		const c = cmyk[0] / 100;
+		const m = cmyk[1] / 100;
+		const y = cmyk[2] / 100;
+		const k = cmyk[3] / 100;
+
+		const r = 1 - Math.min(1, c * (1 - k) + k);
+		const g = 1 - Math.min(1, m * (1 - k) + k);
+		const b = 1 - Math.min(1, y * (1 - k) + k);
+
+		return [r * 255, g * 255, b * 255];
+	};
+
+	convert.xyz.rgb = function (xyz) {
+		const x = xyz[0] / 100;
+		const y = xyz[1] / 100;
+		const z = xyz[2] / 100;
+		let r;
+		let g;
+		let b;
+
+		r = (x * 3.2406) + (y * -1.5372) + (z * -0.4986);
+		g = (x * -0.9689) + (y * 1.8758) + (z * 0.0415);
+		b = (x * 0.0557) + (y * -0.2040) + (z * 1.0570);
+
+		// Assume sRGB
+		r = r > 0.0031308
+			? ((1.055 * (r ** (1.0 / 2.4))) - 0.055)
+			: r * 12.92;
+
+		g = g > 0.0031308
+			? ((1.055 * (g ** (1.0 / 2.4))) - 0.055)
+			: g * 12.92;
+
+		b = b > 0.0031308
+			? ((1.055 * (b ** (1.0 / 2.4))) - 0.055)
+			: b * 12.92;
+
+		r = Math.min(Math.max(0, r), 1);
+		g = Math.min(Math.max(0, g), 1);
+		b = Math.min(Math.max(0, b), 1);
+
+		return [r * 255, g * 255, b * 255];
+	};
+
+	convert.xyz.lab = function (xyz) {
+		let x = xyz[0];
+		let y = xyz[1];
+		let z = xyz[2];
+
+		x /= 95.047;
+		y /= 100;
+		z /= 108.883;
+
+		x = x > 0.008856 ? (x ** (1 / 3)) : (7.787 * x) + (16 / 116);
+		y = y > 0.008856 ? (y ** (1 / 3)) : (7.787 * y) + (16 / 116);
+		z = z > 0.008856 ? (z ** (1 / 3)) : (7.787 * z) + (16 / 116);
+
+		const l = (116 * y) - 16;
+		const a = 500 * (x - y);
+		const b = 200 * (y - z);
+
+		return [l, a, b];
+	};
+
+	convert.lab.xyz = function (lab) {
+		const l = lab[0];
+		const a = lab[1];
+		const b = lab[2];
+		let x;
+		let y;
+		let z;
+
+		y = (l + 16) / 116;
+		x = a / 500 + y;
+		z = y - b / 200;
+
+		const y2 = y ** 3;
+		const x2 = x ** 3;
+		const z2 = z ** 3;
+		y = y2 > 0.008856 ? y2 : (y - 16 / 116) / 7.787;
+		x = x2 > 0.008856 ? x2 : (x - 16 / 116) / 7.787;
+		z = z2 > 0.008856 ? z2 : (z - 16 / 116) / 7.787;
+
+		x *= 95.047;
+		y *= 100;
+		z *= 108.883;
+
+		return [x, y, z];
+	};
+
+	convert.lab.lch = function (lab) {
+		const l = lab[0];
+		const a = lab[1];
+		const b = lab[2];
+		let h;
+
+		const hr = Math.atan2(b, a);
+		h = hr * 360 / 2 / Math.PI;
+
+		if (h < 0) {
+			h += 360;
+		}
+
+		const c = Math.sqrt(a * a + b * b);
+
+		return [l, c, h];
+	};
+
+	convert.lch.lab = function (lch) {
+		const l = lch[0];
+		const c = lch[1];
+		const h = lch[2];
+
+		const hr = h / 360 * 2 * Math.PI;
+		const a = c * Math.cos(hr);
+		const b = c * Math.sin(hr);
+
+		return [l, a, b];
+	};
+
+	convert.rgb.ansi16 = function (args, saturation = null) {
+		const [r, g, b] = args;
+		let value = saturation === null ? convert.rgb.hsv(args)[2] : saturation; // Hsv -> ansi16 optimization
+
+		value = Math.round(value / 50);
+
+		if (value === 0) {
+			return 30;
+		}
+
+		let ansi = 30
+			+ ((Math.round(b / 255) << 2)
+			| (Math.round(g / 255) << 1)
+			| Math.round(r / 255));
+
+		if (value === 2) {
+			ansi += 60;
+		}
+
+		return ansi;
+	};
+
+	convert.hsv.ansi16 = function (args) {
+		// Optimization here; we already know the value and don't need to get
+		// it converted for us.
+		return convert.rgb.ansi16(convert.hsv.rgb(args), args[2]);
+	};
+
+	convert.rgb.ansi256 = function (args) {
+		const r = args[0];
+		const g = args[1];
+		const b = args[2];
+
+		// We use the extended greyscale palette here, with the exception of
+		// black and white. normal palette only has 4 greyscale shades.
+		if (r === g && g === b) {
+			if (r < 8) {
+				return 16;
+			}
+
+			if (r > 248) {
+				return 231;
+			}
+
+			return Math.round(((r - 8) / 247) * 24) + 232;
+		}
+
+		const ansi = 16
+			+ (36 * Math.round(r / 255 * 5))
+			+ (6 * Math.round(g / 255 * 5))
+			+ Math.round(b / 255 * 5);
+
+		return ansi;
+	};
+
+	convert.ansi16.rgb = function (args) {
+		let color = args % 10;
+
+		// Handle greyscale
+		if (color === 0 || color === 7) {
+			if (args > 50) {
+				color += 3.5;
+			}
+
+			color = color / 10.5 * 255;
+
+			return [color, color, color];
+		}
+
+		const mult = (~~(args > 50) + 1) * 0.5;
+		const r = ((color & 1) * mult) * 255;
+		const g = (((color >> 1) & 1) * mult) * 255;
+		const b = (((color >> 2) & 1) * mult) * 255;
+
+		return [r, g, b];
+	};
+
+	convert.ansi256.rgb = function (args) {
+		// Handle greyscale
+		if (args >= 232) {
+			const c = (args - 232) * 10 + 8;
+			return [c, c, c];
+		}
+
+		args -= 16;
+
+		let rem;
+		const r = Math.floor(args / 36) / 5 * 255;
+		const g = Math.floor((rem = args % 36) / 6) / 5 * 255;
+		const b = (rem % 6) / 5 * 255;
+
+		return [r, g, b];
+	};
+
+	convert.rgb.hex = function (args) {
+		const integer = ((Math.round(args[0]) & 0xFF) << 16)
+			+ ((Math.round(args[1]) & 0xFF) << 8)
+			+ (Math.round(args[2]) & 0xFF);
+
+		const string = integer.toString(16).toUpperCase();
+		return '000000'.substring(string.length) + string;
+	};
+
+	convert.hex.rgb = function (args) {
+		const match = args.toString(16).match(/[a-f0-9]{6}|[a-f0-9]{3}/i);
+		if (!match) {
+			return [0, 0, 0];
+		}
+
+		let colorString = match[0];
+
+		if (match[0].length === 3) {
+			colorString = colorString.split('').map(char => {
+				return char + char;
+			}).join('');
+		}
+
+		const integer = parseInt(colorString, 16);
+		const r = (integer >> 16) & 0xFF;
+		const g = (integer >> 8) & 0xFF;
+		const b = integer & 0xFF;
+
+		return [r, g, b];
+	};
+
+	convert.rgb.hcg = function (rgb) {
+		const r = rgb[0] / 255;
+		const g = rgb[1] / 255;
+		const b = rgb[2] / 255;
+		const max = Math.max(Math.max(r, g), b);
+		const min = Math.min(Math.min(r, g), b);
+		const chroma = (max - min);
+		let grayscale;
+		let hue;
+
+		if (chroma < 1) {
+			grayscale = min / (1 - chroma);
+		} else {
+			grayscale = 0;
+		}
+
+		if (chroma <= 0) {
+			hue = 0;
+		} else
+		if (max === r) {
+			hue = ((g - b) / chroma) % 6;
+		} else
+		if (max === g) {
+			hue = 2 + (b - r) / chroma;
+		} else {
+			hue = 4 + (r - g) / chroma;
+		}
+
+		hue /= 6;
+		hue %= 1;
+
+		return [hue * 360, chroma * 100, grayscale * 100];
+	};
+
+	convert.hsl.hcg = function (hsl) {
+		const s = hsl[1] / 100;
+		const l = hsl[2] / 100;
+
+		const c = l < 0.5 ? (2.0 * s * l) : (2.0 * s * (1.0 - l));
+
+		let f = 0;
+		if (c < 1.0) {
+			f = (l - 0.5 * c) / (1.0 - c);
+		}
+
+		return [hsl[0], c * 100, f * 100];
+	};
+
+	convert.hsv.hcg = function (hsv) {
+		const s = hsv[1] / 100;
+		const v = hsv[2] / 100;
+
+		const c = s * v;
+		let f = 0;
+
+		if (c < 1.0) {
+			f = (v - c) / (1 - c);
+		}
+
+		return [hsv[0], c * 100, f * 100];
+	};
+
+	convert.hcg.rgb = function (hcg) {
+		const h = hcg[0] / 360;
+		const c = hcg[1] / 100;
+		const g = hcg[2] / 100;
+
+		if (c === 0.0) {
+			return [g * 255, g * 255, g * 255];
+		}
+
+		const pure = [0, 0, 0];
+		const hi = (h % 1) * 6;
+		const v = hi % 1;
+		const w = 1 - v;
+		let mg = 0;
+
+		/* eslint-disable max-statements-per-line */
+		switch (Math.floor(hi)) {
+			case 0:
+				pure[0] = 1; pure[1] = v; pure[2] = 0; break;
+			case 1:
+				pure[0] = w; pure[1] = 1; pure[2] = 0; break;
+			case 2:
+				pure[0] = 0; pure[1] = 1; pure[2] = v; break;
+			case 3:
+				pure[0] = 0; pure[1] = w; pure[2] = 1; break;
+			case 4:
+				pure[0] = v; pure[1] = 0; pure[2] = 1; break;
+			default:
+				pure[0] = 1; pure[1] = 0; pure[2] = w;
+		}
+		/* eslint-enable max-statements-per-line */
+
+		mg = (1.0 - c) * g;
+
+		return [
+			(c * pure[0] + mg) * 255,
+			(c * pure[1] + mg) * 255,
+			(c * pure[2] + mg) * 255
+		];
+	};
+
+	convert.hcg.hsv = function (hcg) {
+		const c = hcg[1] / 100;
+		const g = hcg[2] / 100;
+
+		const v = c + g * (1.0 - c);
+		let f = 0;
+
+		if (v > 0.0) {
+			f = c / v;
+		}
+
+		return [hcg[0], f * 100, v * 100];
+	};
+
+	convert.hcg.hsl = function (hcg) {
+		const c = hcg[1] / 100;
+		const g = hcg[2] / 100;
+
+		const l = g * (1.0 - c) + 0.5 * c;
+		let s = 0;
+
+		if (l > 0.0 && l < 0.5) {
+			s = c / (2 * l);
+		} else
+		if (l >= 0.5 && l < 1.0) {
+			s = c / (2 * (1 - l));
+		}
+
+		return [hcg[0], s * 100, l * 100];
+	};
+
+	convert.hcg.hwb = function (hcg) {
+		const c = hcg[1] / 100;
+		const g = hcg[2] / 100;
+		const v = c + g * (1.0 - c);
+		return [hcg[0], (v - c) * 100, (1 - v) * 100];
+	};
+
+	convert.hwb.hcg = function (hwb) {
+		const w = hwb[1] / 100;
+		const b = hwb[2] / 100;
+		const v = 1 - b;
+		const c = v - w;
+		let g = 0;
+
+		if (c < 1) {
+			g = (v - c) / (1 - c);
+		}
+
+		return [hwb[0], c * 100, g * 100];
+	};
+
+	convert.apple.rgb = function (apple) {
+		return [(apple[0] / 65535) * 255, (apple[1] / 65535) * 255, (apple[2] / 65535) * 255];
+	};
+
+	convert.rgb.apple = function (rgb) {
+		return [(rgb[0] / 255) * 65535, (rgb[1] / 255) * 65535, (rgb[2] / 255) * 65535];
+	};
+
+	convert.gray.rgb = function (args) {
+		return [args[0] / 100 * 255, args[0] / 100 * 255, args[0] / 100 * 255];
+	};
+
+	convert.gray.hsl = function (args) {
+		return [0, 0, args[0]];
+	};
+
+	convert.gray.hsv = convert.gray.hsl;
+
+	convert.gray.hwb = function (gray) {
+		return [0, 100, gray[0]];
+	};
+
+	convert.gray.cmyk = function (gray) {
+		return [0, 0, 0, gray[0]];
+	};
+
+	convert.gray.lab = function (gray) {
+		return [gray[0], 0, 0];
+	};
+
+	convert.gray.hex = function (gray) {
+		const val = Math.round(gray[0] / 100 * 255) & 0xFF;
+		const integer = (val << 16) + (val << 8) + val;
+
+		const string = integer.toString(16).toUpperCase();
+		return '000000'.substring(string.length) + string;
+	};
+
+	convert.rgb.gray = function (rgb) {
+		const val = (rgb[0] + rgb[1] + rgb[2]) / 3;
+		return [val / 255 * 100];
+	};
+	return conversions;
+}
+
+var route;
+var hasRequiredRoute;
+
+function requireRoute () {
+	if (hasRequiredRoute) return route;
+	hasRequiredRoute = 1;
+	const conversions = requireConversions();
+
+	/*
+		This function routes a model to all other models.
+
+		all functions that are routed have a property `.conversion` attached
+		to the returned synthetic function. This property is an array
+		of strings, each with the steps in between the 'from' and 'to'
+		color models (inclusive).
+
+		conversions that are not possible simply are not included.
+	*/
+
+	function buildGraph() {
+		const graph = {};
+		// https://jsperf.com/object-keys-vs-for-in-with-closure/3
+		const models = Object.keys(conversions);
+
+		for (let len = models.length, i = 0; i < len; i++) {
+			graph[models[i]] = {
+				// http://jsperf.com/1-vs-infinity
+				// micro-opt, but this is simple.
+				distance: -1,
+				parent: null
+			};
+		}
+
+		return graph;
+	}
+
+	// https://en.wikipedia.org/wiki/Breadth-first_search
+	function deriveBFS(fromModel) {
+		const graph = buildGraph();
+		const queue = [fromModel]; // Unshift -> queue -> pop
+
+		graph[fromModel].distance = 0;
+
+		while (queue.length) {
+			const current = queue.pop();
+			const adjacents = Object.keys(conversions[current]);
+
+			for (let len = adjacents.length, i = 0; i < len; i++) {
+				const adjacent = adjacents[i];
+				const node = graph[adjacent];
+
+				if (node.distance === -1) {
+					node.distance = graph[current].distance + 1;
+					node.parent = current;
+					queue.unshift(adjacent);
+				}
+			}
+		}
+
+		return graph;
+	}
+
+	function link(from, to) {
+		return function (args) {
+			return to(from(args));
+		};
+	}
+
+	function wrapConversion(toModel, graph) {
+		const path = [graph[toModel].parent, toModel];
+		let fn = conversions[graph[toModel].parent][toModel];
+
+		let cur = graph[toModel].parent;
+		while (graph[cur].parent) {
+			path.unshift(graph[cur].parent);
+			fn = link(conversions[graph[cur].parent][cur], fn);
+			cur = graph[cur].parent;
+		}
+
+		fn.conversion = path;
+		return fn;
+	}
+
+	route = function (fromModel) {
+		const graph = deriveBFS(fromModel);
+		const conversion = {};
+
+		const models = Object.keys(graph);
+		for (let len = models.length, i = 0; i < len; i++) {
+			const toModel = models[i];
+			const node = graph[toModel];
+
+			if (node.parent === null) {
+				// No possible conversion, or this node is the source model.
+				continue;
+			}
+
+			conversion[toModel] = wrapConversion(toModel, graph);
+		}
+
+		return conversion;
+	};
+	return route;
+}
+
+var colorConvert;
+var hasRequiredColorConvert;
+
+function requireColorConvert () {
+	if (hasRequiredColorConvert) return colorConvert;
+	hasRequiredColorConvert = 1;
+	const conversions = requireConversions();
+	const route = requireRoute();
+
+	const convert = {};
+
+	const models = Object.keys(conversions);
+
+	function wrapRaw(fn) {
+		const wrappedFn = function (...args) {
+			const arg0 = args[0];
+			if (arg0 === undefined || arg0 === null) {
+				return arg0;
+			}
+
+			if (arg0.length > 1) {
+				args = arg0;
+			}
+
+			return fn(args);
+		};
+
+		// Preserve .conversion property if there is one
+		if ('conversion' in fn) {
+			wrappedFn.conversion = fn.conversion;
+		}
+
+		return wrappedFn;
+	}
+
+	function wrapRounded(fn) {
+		const wrappedFn = function (...args) {
+			const arg0 = args[0];
+
+			if (arg0 === undefined || arg0 === null) {
+				return arg0;
+			}
+
+			if (arg0.length > 1) {
+				args = arg0;
+			}
+
+			const result = fn(args);
+
+			// We're assuming the result is an array here.
+			// see notice in conversions.js; don't use box types
+			// in conversion functions.
+			if (typeof result === 'object') {
+				for (let len = result.length, i = 0; i < len; i++) {
+					result[i] = Math.round(result[i]);
+				}
+			}
+
+			return result;
+		};
+
+		// Preserve .conversion property if there is one
+		if ('conversion' in fn) {
+			wrappedFn.conversion = fn.conversion;
+		}
+
+		return wrappedFn;
+	}
+
+	models.forEach(fromModel => {
+		convert[fromModel] = {};
+
+		Object.defineProperty(convert[fromModel], 'channels', {value: conversions[fromModel].channels});
+		Object.defineProperty(convert[fromModel], 'labels', {value: conversions[fromModel].labels});
+
+		const routes = route(fromModel);
+		const routeModels = Object.keys(routes);
+
+		routeModels.forEach(toModel => {
+			const fn = routes[toModel];
+
+			convert[fromModel][toModel] = wrapRounded(fn);
+			convert[fromModel][toModel].raw = wrapRaw(fn);
+		});
+	});
+
+	colorConvert = convert;
+	return colorConvert;
+}
+
+ansiStyles$1.exports;
+
+(function (module) {
+
+	const wrapAnsi16 = (fn, offset) => (...args) => {
+		const code = fn(...args);
+		return `\u001B[${code + offset}m`;
+	};
+
+	const wrapAnsi256 = (fn, offset) => (...args) => {
+		const code = fn(...args);
+		return `\u001B[${38 + offset};5;${code}m`;
+	};
+
+	const wrapAnsi16m = (fn, offset) => (...args) => {
+		const rgb = fn(...args);
+		return `\u001B[${38 + offset};2;${rgb[0]};${rgb[1]};${rgb[2]}m`;
+	};
+
+	const ansi2ansi = n => n;
+	const rgb2rgb = (r, g, b) => [r, g, b];
+
+	const setLazyProperty = (object, property, get) => {
+		Object.defineProperty(object, property, {
+			get: () => {
+				const value = get();
+
+				Object.defineProperty(object, property, {
+					value,
+					enumerable: true,
+					configurable: true
+				});
+
+				return value;
+			},
+			enumerable: true,
+			configurable: true
+		});
+	};
+
+	/** @type {typeof import('color-convert')} */
+	let colorConvert;
+	const makeDynamicStyles = (wrap, targetSpace, identity, isBackground) => {
+		if (colorConvert === undefined) {
+			colorConvert = requireColorConvert();
+		}
+
+		const offset = isBackground ? 10 : 0;
+		const styles = {};
+
+		for (const [sourceSpace, suite] of Object.entries(colorConvert)) {
+			const name = sourceSpace === 'ansi16' ? 'ansi' : sourceSpace;
+			if (sourceSpace === targetSpace) {
+				styles[name] = wrap(identity, offset);
+			} else if (typeof suite === 'object') {
+				styles[name] = wrap(suite[targetSpace], offset);
+			}
+		}
+
+		return styles;
+	};
+
+	function assembleStyles() {
+		const codes = new Map();
+		const styles = {
+			modifier: {
+				reset: [0, 0],
+				// 21 isn't widely supported and 22 does the same thing
+				bold: [1, 22],
+				dim: [2, 22],
+				italic: [3, 23],
+				underline: [4, 24],
+				inverse: [7, 27],
+				hidden: [8, 28],
+				strikethrough: [9, 29]
+			},
+			color: {
+				black: [30, 39],
+				red: [31, 39],
+				green: [32, 39],
+				yellow: [33, 39],
+				blue: [34, 39],
+				magenta: [35, 39],
+				cyan: [36, 39],
+				white: [37, 39],
+
+				// Bright color
+				blackBright: [90, 39],
+				redBright: [91, 39],
+				greenBright: [92, 39],
+				yellowBright: [93, 39],
+				blueBright: [94, 39],
+				magentaBright: [95, 39],
+				cyanBright: [96, 39],
+				whiteBright: [97, 39]
+			},
+			bgColor: {
+				bgBlack: [40, 49],
+				bgRed: [41, 49],
+				bgGreen: [42, 49],
+				bgYellow: [43, 49],
+				bgBlue: [44, 49],
+				bgMagenta: [45, 49],
+				bgCyan: [46, 49],
+				bgWhite: [47, 49],
+
+				// Bright color
+				bgBlackBright: [100, 49],
+				bgRedBright: [101, 49],
+				bgGreenBright: [102, 49],
+				bgYellowBright: [103, 49],
+				bgBlueBright: [104, 49],
+				bgMagentaBright: [105, 49],
+				bgCyanBright: [106, 49],
+				bgWhiteBright: [107, 49]
+			}
+		};
+
+		// Alias bright black as gray (and grey)
+		styles.color.gray = styles.color.blackBright;
+		styles.bgColor.bgGray = styles.bgColor.bgBlackBright;
+		styles.color.grey = styles.color.blackBright;
+		styles.bgColor.bgGrey = styles.bgColor.bgBlackBright;
+
+		for (const [groupName, group] of Object.entries(styles)) {
+			for (const [styleName, style] of Object.entries(group)) {
+				styles[styleName] = {
+					open: `\u001B[${style[0]}m`,
+					close: `\u001B[${style[1]}m`
+				};
+
+				group[styleName] = styles[styleName];
+
+				codes.set(style[0], style[1]);
+			}
+
+			Object.defineProperty(styles, groupName, {
+				value: group,
+				enumerable: false
+			});
+		}
+
+		Object.defineProperty(styles, 'codes', {
+			value: codes,
+			enumerable: false
+		});
+
+		styles.color.close = '\u001B[39m';
+		styles.bgColor.close = '\u001B[49m';
+
+		setLazyProperty(styles.color, 'ansi', () => makeDynamicStyles(wrapAnsi16, 'ansi16', ansi2ansi, false));
+		setLazyProperty(styles.color, 'ansi256', () => makeDynamicStyles(wrapAnsi256, 'ansi256', ansi2ansi, false));
+		setLazyProperty(styles.color, 'ansi16m', () => makeDynamicStyles(wrapAnsi16m, 'rgb', rgb2rgb, false));
+		setLazyProperty(styles.bgColor, 'ansi', () => makeDynamicStyles(wrapAnsi16, 'ansi16', ansi2ansi, true));
+		setLazyProperty(styles.bgColor, 'ansi256', () => makeDynamicStyles(wrapAnsi256, 'ansi256', ansi2ansi, true));
+		setLazyProperty(styles.bgColor, 'ansi16m', () => makeDynamicStyles(wrapAnsi16m, 'rgb', rgb2rgb, true));
+
+		return styles;
+	}
+
+	// Make the export immutable
+	Object.defineProperty(module, 'exports', {
+		enumerable: true,
+		get: assembleStyles
+	}); 
+} (ansiStyles$1));
+
+var ansiStylesExports = ansiStyles$1.exports;
+
+const stringWidth = stringWidthExports;
+const stripAnsi = stripAnsi$2;
+const ansiStyles = ansiStylesExports;
+
+const ESCAPES = new Set([
+	'\u001B',
+	'\u009B'
+]);
+
+const END_CODE = 39;
+
+const wrapAnsi = code => `${ESCAPES.values().next().value}[${code}m`;
+
+// Calculate the length of words split on ' ', ignoring
+// the extra characters added by ansi escape codes
+const wordLengths = string => string.split(' ').map(character => stringWidth(character));
+
+// Wrap a long word across multiple rows
+// Ansi escape codes do not count towards length
+const wrapWord = (rows, word, columns) => {
+	const characters = [...word];
+
+	let isInsideEscape = false;
+	let visible = stringWidth(stripAnsi(rows[rows.length - 1]));
+
+	for (const [index, character] of characters.entries()) {
+		const characterLength = stringWidth(character);
+
+		if (visible + characterLength <= columns) {
+			rows[rows.length - 1] += character;
+		} else {
+			rows.push(character);
+			visible = 0;
+		}
+
+		if (ESCAPES.has(character)) {
+			isInsideEscape = true;
+		} else if (isInsideEscape && character === 'm') {
+			isInsideEscape = false;
+			continue;
+		}
+
+		if (isInsideEscape) {
+			continue;
+		}
+
+		visible += characterLength;
+
+		if (visible === columns && index < characters.length - 1) {
+			rows.push('');
+			visible = 0;
+		}
+	}
+
+	// It's possible that the last row we copy over is only
+	// ansi escape characters, handle this edge-case
+	if (!visible && rows[rows.length - 1].length > 0 && rows.length > 1) {
+		rows[rows.length - 2] += rows.pop();
+	}
+};
+
+// Trims spaces from a string ignoring invisible sequences
+const stringVisibleTrimSpacesRight = str => {
+	const words = str.split(' ');
+	let last = words.length;
+
+	while (last > 0) {
+		if (stringWidth(words[last - 1]) > 0) {
+			break;
+		}
+
+		last--;
+	}
+
+	if (last === words.length) {
+		return str;
+	}
+
+	return words.slice(0, last).join(' ') + words.slice(last).join('');
+};
+
+// The wrap-ansi module can be invoked in either 'hard' or 'soft' wrap mode
+//
+// 'hard' will never allow a string to take up more than columns characters
+//
+// 'soft' allows long words to expand past the column length
+const exec = (string, columns, options = {}) => {
+	if (options.trim !== false && string.trim() === '') {
+		return '';
+	}
+
+	let pre = '';
+	let ret = '';
+	let escapeCode;
+
+	const lengths = wordLengths(string);
+	let rows = [''];
+
+	for (const [index, word] of string.split(' ').entries()) {
+		if (options.trim !== false) {
+			rows[rows.length - 1] = rows[rows.length - 1].trimLeft();
+		}
+
+		let rowLength = stringWidth(rows[rows.length - 1]);
+
+		if (index !== 0) {
+			if (rowLength >= columns && (options.wordWrap === false || options.trim === false)) {
+				// If we start with a new word but the current row length equals the length of the columns, add a new row
+				rows.push('');
+				rowLength = 0;
+			}
+
+			if (rowLength > 0 || options.trim === false) {
+				rows[rows.length - 1] += ' ';
+				rowLength++;
+			}
+		}
+
+		// In 'hard' wrap mode, the length of a line is never allowed to extend past 'columns'
+		if (options.hard && lengths[index] > columns) {
+			const remainingColumns = (columns - rowLength);
+			const breaksStartingThisLine = 1 + Math.floor((lengths[index] - remainingColumns - 1) / columns);
+			const breaksStartingNextLine = Math.floor((lengths[index] - 1) / columns);
+			if (breaksStartingNextLine < breaksStartingThisLine) {
+				rows.push('');
+			}
+
+			wrapWord(rows, word, columns);
+			continue;
+		}
+
+		if (rowLength + lengths[index] > columns && rowLength > 0 && lengths[index] > 0) {
+			if (options.wordWrap === false && rowLength < columns) {
+				wrapWord(rows, word, columns);
+				continue;
+			}
+
+			rows.push('');
+		}
+
+		if (rowLength + lengths[index] > columns && options.wordWrap === false) {
+			wrapWord(rows, word, columns);
+			continue;
+		}
+
+		rows[rows.length - 1] += word;
+	}
+
+	if (options.trim !== false) {
+		rows = rows.map(stringVisibleTrimSpacesRight);
+	}
+
+	pre = rows.join('\n');
+
+	for (const [index, character] of [...pre].entries()) {
+		ret += character;
+
+		if (ESCAPES.has(character)) {
+			const code = parseFloat(/\d[^m]*/.exec(pre.slice(index, index + 4)));
+			escapeCode = code === END_CODE ? null : code;
+		}
+
+		const code = ansiStyles.codes.get(Number(escapeCode));
+
+		if (escapeCode && code) {
+			if (pre[index + 1] === '\n') {
+				ret += wrapAnsi(code);
+			} else if (character === '\n') {
+				ret += wrapAnsi(escapeCode);
+			}
+		}
+	}
+
+	return ret;
+};
+
+// For each newline, invoke the method separately
+var wrapAnsi_1 = (string, columns, options) => {
+	return String(string)
+		.normalize()
+		.replace(/\r\n/g, '\n')
+		.split('\n')
+		.map(line => exec(line, columns, options))
+		.join('\n');
+};
+
+const wrapAnsi$1 = /*@__PURE__*/getDefaultExportFromCjs(wrapAnsi_1);
+
+/**
+ * Force line returns at specific width. This function is ANSI code friendly and it'll
+ * ignore invisible codes during width calculation.
+ * @param {string} content
+ * @param {number} width
+ * @return {string}
+ */
+function breakLines(content, width) {
+    return content
+        .split('\n')
+        .flatMap((line) => wrapAnsi$1(line, width, { trim: false, hard: true })
+        .split('\n')
+        .map((str) => str.trimEnd()))
+        .join('\n');
+}
+/**
+ * Returns the width of the active readline, or 80 as default value.
+ * @returns {number}
+ */
+function readlineWidth() {
+    return cliWidth$1({ defaultWidth: 80, output: readline().output });
+}
+
+function split(content, width) {
+    return breakLines(content, width).split('\n');
+}
+/**
+ * Rotates an array of items by an integer number of positions.
+ * @param {number} count The number of positions to rotate by
+ * @param {T[]} items The items to rotate
+ */
+function rotate(count, items) {
+    const max = items.length;
+    const offset = ((count % max) + max) % max;
+    return [...items.slice(offset), ...items.slice(0, offset)];
+}
+/**
+ * Renders a page of items as lines that fit within the given width ensuring
+ * that the number of lines is not greater than the page size, and the active
+ * item renders at the provided position, while prioritizing that as many lines
+ * of the active item get rendered as possible.
+ */
+function lines({ items, width, renderItem, active, position: requested, pageSize, }) {
+    const layouts = items.map((item, index) => ({
+        item,
+        index,
+        isActive: index === active,
+    }));
+    const layoutsInPage = rotate(active - requested, layouts).slice(0, pageSize);
+    const renderItemAt = (index) => split(renderItem(layoutsInPage[index]), width);
+    // Create a blank array of lines for the page
+    const pageBuffer = Array.from({ length: pageSize });
+    // Render the active item to decide the position
+    const activeItem = renderItemAt(requested).slice(0, pageSize);
+    const position = requested + activeItem.length <= pageSize ? requested : pageSize - activeItem.length;
+    // Add the lines of the active item into the page
+    pageBuffer.splice(position, activeItem.length, ...activeItem);
+    // Fill the page under the active item
+    let bufferPointer = position + activeItem.length;
+    let layoutPointer = requested + 1;
+    while (bufferPointer < pageSize && layoutPointer < layoutsInPage.length) {
+        for (const line of renderItemAt(layoutPointer)) {
+            pageBuffer[bufferPointer++] = line;
+            if (bufferPointer >= pageSize)
+                break;
+        }
+        layoutPointer++;
+    }
+    // Fill the page over the active item
+    bufferPointer = position - 1;
+    layoutPointer = requested - 1;
+    while (bufferPointer >= 0 && layoutPointer >= 0) {
+        for (const line of renderItemAt(layoutPointer).reverse()) {
+            pageBuffer[bufferPointer--] = line;
+            if (bufferPointer < 0)
+                break;
+        }
+        layoutPointer--;
+    }
+    return pageBuffer.filter((line) => typeof line === 'string');
+}
+
+/**
+ * Creates the next position for the active item considering a finite list of
+ * items to be rendered on a page.
+ */
+function finite({ active, pageSize, total, }) {
+    const middle = Math.floor(pageSize / 2);
+    if (total <= pageSize || active < middle)
+        return active;
+    if (active >= total - middle)
+        return active + pageSize - total;
+    return middle;
+}
+/**
+ * Creates the next position for the active item considering an infinitely
+ * looping list of items to be rendered on the page.
+ */
+function infinite({ active, lastActive, total, pageSize, pointer, }) {
+    if (total <= pageSize)
+        return active;
+    // Move the position only when the user moves down, and when the
+    // navigation fits within a single page
+    if (lastActive < active && active - lastActive < pageSize) {
+        // Limit it to the middle of the list
+        return Math.min(Math.floor(pageSize / 2), pointer + active - lastActive);
+    }
+    return pointer;
+}
+
+function usePagination({ items, active, renderItem, pageSize, loop = true, }) {
+    const state = useRef({ position: 0, lastActive: 0 });
+    const position = loop
+        ? infinite({
+            active,
+            lastActive: state.current.lastActive,
+            total: items.length,
+            pageSize,
+            pointer: state.current.position,
+        })
+        : finite({
+            active,
+            total: items.length,
+            pageSize,
+        });
+    state.current.position = position;
+    state.current.lastActive = active;
+    return lines({
+        items,
+        width: readlineWidth(),
+        renderItem,
+        active,
+        position,
+        pageSize,
+    }).join('\n');
+}
+
+class CancelablePromise extends Promise {
+    cancel = () => { };
+}
+
+const Stream = require$$0$3;
+
+class MuteStream extends Stream {
+  #isTTY = null
+
+  constructor (opts = {}) {
+    super(opts);
+    this.writable = this.readable = true;
+    this.muted = false;
+    this.on('pipe', this._onpipe);
+    this.replace = opts.replace;
+
+    // For readline-type situations
+    // This much at the start of a line being redrawn after a ctrl char
+    // is seen (such as backspace) won't be redrawn as the replacement
+    this._prompt = opts.prompt || null;
+    this._hadControl = false;
+  }
+
+  #destSrc (key, def) {
+    if (this._dest) {
+      return this._dest[key]
+    }
+    if (this._src) {
+      return this._src[key]
+    }
+    return def
+  }
+
+  #proxy (method, ...args) {
+    if (typeof this._dest?.[method] === 'function') {
+      this._dest[method](...args);
+    }
+    if (typeof this._src?.[method] === 'function') {
+      this._src[method](...args);
+    }
+  }
+
+  get isTTY () {
+    if (this.#isTTY !== null) {
+      return this.#isTTY
+    }
+    return this.#destSrc('isTTY', false)
+  }
+
+  // basically just get replace the getter/setter with a regular value
+  set isTTY (val) {
+    this.#isTTY = val;
+  }
+
+  get rows () {
+    return this.#destSrc('rows')
+  }
+
+  get columns () {
+    return this.#destSrc('columns')
+  }
+
+  mute () {
+    this.muted = true;
+  }
+
+  unmute () {
+    this.muted = false;
+  }
+
+  _onpipe (src) {
+    this._src = src;
+  }
+
+  pipe (dest, options) {
+    this._dest = dest;
+    return super.pipe(dest, options)
+  }
+
+  pause () {
+    if (this._src) {
+      return this._src.pause()
+    }
+  }
+
+  resume () {
+    if (this._src) {
+      return this._src.resume()
+    }
+  }
+
+  write (c) {
+    if (this.muted) {
+      if (!this.replace) {
+        return true
+      }
+      // eslint-disable-next-line no-control-regex
+      if (c.match(/^\u001b/)) {
+        if (c.indexOf(this._prompt) === 0) {
+          c = c.slice(this._prompt.length);
+          c = c.replace(/./g, this.replace);
+          c = this._prompt + c;
+        }
+        this._hadControl = true;
+        return this.emit('data', c)
+      } else {
+        if (this._prompt && this._hadControl &&
+          c.indexOf(this._prompt) === 0) {
+          this._hadControl = false;
+          this.emit('data', this._prompt);
+          c = c.slice(this._prompt.length);
+        }
+        c = c.toString().replace(/./g, this.replace);
+      }
+    }
+    this.emit('data', c);
+  }
+
+  end (c) {
+    if (this.muted) {
+      if (c && this.replace) {
+        c = c.toString().replace(/./g, this.replace);
+      } else {
+        c = null;
+      }
+    }
+    if (c) {
+      this.emit('data', c);
+    }
+    this.emit('end');
+  }
+
+  destroy (...args) {
+    return this.#proxy('destroy', ...args)
+  }
+
+  destroySoon (...args) {
+    return this.#proxy('destroySoon', ...args)
+  }
+
+  close (...args) {
+    return this.#proxy('close', ...args)
+  }
+}
+
+var lib = MuteStream;
+
+const MuteStream$1 = /*@__PURE__*/getDefaultExportFromCjs(lib);
+
+/**
+ * This is not the set of all possible signals.
+ *
+ * It IS, however, the set of all signals that trigger
+ * an exit on either Linux or BSD systems.  Linux is a
+ * superset of the signal names supported on BSD, and
+ * the unknown signals just fail to register, so we can
+ * catch that easily enough.
+ *
+ * Windows signals are a different set, since there are
+ * signals that terminate Windows processes, but don't
+ * terminate (or don't even exist) on Posix systems.
+ *
+ * Don't bother with SIGKILL.  It's uncatchable, which
+ * means that we can't fire any callbacks anyway.
+ *
+ * If a user does happen to register a handler on a non-
+ * fatal signal like SIGWINCH or something, and then
+ * exit, it'll end up firing `process.emit('exit')`, so
+ * the handler will be fired anyway.
+ *
+ * SIGBUS, SIGFPE, SIGSEGV and SIGILL, when not raised
+ * artificially, inherently leave the process in a
+ * state from which it is not safe to try and enter JS
+ * listeners.
+ */
+const signals = [];
+signals.push('SIGHUP', 'SIGINT', 'SIGTERM');
+if (process.platform !== 'win32') {
+    signals.push('SIGALRM', 'SIGABRT', 'SIGVTALRM', 'SIGXCPU', 'SIGXFSZ', 'SIGUSR2', 'SIGTRAP', 'SIGSYS', 'SIGQUIT', 'SIGIOT'
+    // should detect profiler and enable/disable accordingly.
+    // see #21
+    // 'SIGPROF'
+    );
+}
+if (process.platform === 'linux') {
+    signals.push('SIGIO', 'SIGPOLL', 'SIGPWR', 'SIGSTKFLT');
+}
+
+// Note: since nyc uses this module to output coverage, any lines
+// that are in the direct sync flow of nyc's outputCoverage are
+// ignored, since we can never get coverage for them.
+// grab a reference to node's real process object right away
+const processOk = (process) => !!process &&
+    typeof process === 'object' &&
+    typeof process.removeListener === 'function' &&
+    typeof process.emit === 'function' &&
+    typeof process.reallyExit === 'function' &&
+    typeof process.listeners === 'function' &&
+    typeof process.kill === 'function' &&
+    typeof process.pid === 'number' &&
+    typeof process.on === 'function';
+const kExitEmitter = Symbol.for('signal-exit emitter');
+const global$1 = globalThis;
+const ObjectDefineProperty = Object.defineProperty.bind(Object);
+// teeny special purpose ee
+class Emitter {
+    emitted = {
+        afterExit: false,
+        exit: false,
+    };
+    listeners = {
+        afterExit: [],
+        exit: [],
+    };
+    count = 0;
+    id = Math.random();
+    constructor() {
+        if (global$1[kExitEmitter]) {
+            return global$1[kExitEmitter];
+        }
+        ObjectDefineProperty(global$1, kExitEmitter, {
+            value: this,
+            writable: false,
+            enumerable: false,
+            configurable: false,
+        });
+    }
+    on(ev, fn) {
+        this.listeners[ev].push(fn);
+    }
+    removeListener(ev, fn) {
+        const list = this.listeners[ev];
+        const i = list.indexOf(fn);
+        /* c8 ignore start */
+        if (i === -1) {
+            return;
+        }
+        /* c8 ignore stop */
+        if (i === 0 && list.length === 1) {
+            list.length = 0;
+        }
+        else {
+            list.splice(i, 1);
+        }
+    }
+    emit(ev, code, signal) {
+        if (this.emitted[ev]) {
+            return false;
+        }
+        this.emitted[ev] = true;
+        let ret = false;
+        for (const fn of this.listeners[ev]) {
+            ret = fn(code, signal) === true || ret;
+        }
+        if (ev === 'exit') {
+            ret = this.emit('afterExit', code, signal) || ret;
+        }
+        return ret;
+    }
+}
+class SignalExitBase {
+}
+const signalExitWrap = (handler) => {
+    return {
+        onExit(cb, opts) {
+            return handler.onExit(cb, opts);
+        },
+        load() {
+            return handler.load();
+        },
+        unload() {
+            return handler.unload();
+        },
+    };
+};
+class SignalExitFallback extends SignalExitBase {
+    onExit() {
+        return () => { };
+    }
+    load() { }
+    unload() { }
+}
+class SignalExit extends SignalExitBase {
+    // "SIGHUP" throws an `ENOSYS` error on Windows,
+    // so use a supported signal instead
+    /* c8 ignore start */
+    #hupSig = process$1.platform === 'win32' ? 'SIGINT' : 'SIGHUP';
+    /* c8 ignore stop */
+    #emitter = new Emitter();
+    #process;
+    #originalProcessEmit;
+    #originalProcessReallyExit;
+    #sigListeners = {};
+    #loaded = false;
+    constructor(process) {
+        super();
+        this.#process = process;
+        // { <signal>: <listener fn>, ... }
+        this.#sigListeners = {};
+        for (const sig of signals) {
+            this.#sigListeners[sig] = () => {
+                // If there are no other listeners, an exit is coming!
+                // Simplest way: remove us and then re-send the signal.
+                // We know that this will kill the process, so we can
+                // safely emit now.
+                const listeners = this.#process.listeners(sig);
+                let { count } = this.#emitter;
+                // This is a workaround for the fact that signal-exit v3 and signal
+                // exit v4 are not aware of each other, and each will attempt to let
+                // the other handle it, so neither of them do. To correct this, we
+                // detect if we're the only handler *except* for previous versions
+                // of signal-exit, and increment by the count of listeners it has
+                // created.
+                /* c8 ignore start */
+                const p = process;
+                if (typeof p.__signal_exit_emitter__ === 'object' &&
+                    typeof p.__signal_exit_emitter__.count === 'number') {
+                    count += p.__signal_exit_emitter__.count;
+                }
+                /* c8 ignore stop */
+                if (listeners.length === count) {
+                    this.unload();
+                    const ret = this.#emitter.emit('exit', null, sig);
+                    /* c8 ignore start */
+                    const s = sig === 'SIGHUP' ? this.#hupSig : sig;
+                    if (!ret)
+                        process.kill(process.pid, s);
+                    /* c8 ignore stop */
+                }
+            };
+        }
+        this.#originalProcessReallyExit = process.reallyExit;
+        this.#originalProcessEmit = process.emit;
+    }
+    onExit(cb, opts) {
+        /* c8 ignore start */
+        if (!processOk(this.#process)) {
+            return () => { };
+        }
+        /* c8 ignore stop */
+        if (this.#loaded === false) {
+            this.load();
+        }
+        const ev = opts?.alwaysLast ? 'afterExit' : 'exit';
+        this.#emitter.on(ev, cb);
+        return () => {
+            this.#emitter.removeListener(ev, cb);
+            if (this.#emitter.listeners['exit'].length === 0 &&
+                this.#emitter.listeners['afterExit'].length === 0) {
+                this.unload();
+            }
+        };
+    }
+    load() {
+        if (this.#loaded) {
+            return;
+        }
+        this.#loaded = true;
+        // This is the number of onSignalExit's that are in play.
+        // It's important so that we can count the correct number of
+        // listeners on signals, and don't wait for the other one to
+        // handle it instead of us.
+        this.#emitter.count += 1;
+        for (const sig of signals) {
+            try {
+                const fn = this.#sigListeners[sig];
+                if (fn)
+                    this.#process.on(sig, fn);
+            }
+            catch (_) { }
+        }
+        this.#process.emit = (ev, ...a) => {
+            return this.#processEmit(ev, ...a);
+        };
+        this.#process.reallyExit = (code) => {
+            return this.#processReallyExit(code);
+        };
+    }
+    unload() {
+        if (!this.#loaded) {
+            return;
+        }
+        this.#loaded = false;
+        signals.forEach(sig => {
+            const listener = this.#sigListeners[sig];
+            /* c8 ignore start */
+            if (!listener) {
+                throw new Error('Listener not defined for signal: ' + sig);
+            }
+            /* c8 ignore stop */
+            try {
+                this.#process.removeListener(sig, listener);
+                /* c8 ignore start */
+            }
+            catch (_) { }
+            /* c8 ignore stop */
+        });
+        this.#process.emit = this.#originalProcessEmit;
+        this.#process.reallyExit = this.#originalProcessReallyExit;
+        this.#emitter.count -= 1;
+    }
+    #processReallyExit(code) {
+        /* c8 ignore start */
+        if (!processOk(this.#process)) {
+            return 0;
+        }
+        this.#process.exitCode = code || 0;
+        /* c8 ignore stop */
+        this.#emitter.emit('exit', this.#process.exitCode, null);
+        return this.#originalProcessReallyExit.call(this.#process, this.#process.exitCode);
+    }
+    #processEmit(ev, ...args) {
+        const og = this.#originalProcessEmit;
+        if (ev === 'exit' && processOk(this.#process)) {
+            if (typeof args[0] === 'number') {
+                this.#process.exitCode = args[0];
+                /* c8 ignore start */
+            }
+            /* c8 ignore start */
+            const ret = og.call(this.#process, ev, ...args);
+            /* c8 ignore start */
+            this.#emitter.emit('exit', this.#process.exitCode, null);
+            /* c8 ignore stop */
+            return ret;
+        }
+        else {
+            return og.call(this.#process, ev, ...args);
+        }
+    }
+}
+const process$1 = globalThis.process;
+// wrap so that we call the method on the actual handler, without
+// exporting it directly.
+const { 
+/**
+ * Called when the process is exiting, whether via signal, explicit
+ * exit, or running out of stuff to do.
+ *
+ * If the global process object is not suitable for instrumentation,
+ * then this will be a no-op.
+ *
+ * Returns a function that may be used to unload signal-exit.
+ */
+onExit, 
+/**
+ * Load the listeners.  Likely you never need to call this, unless
+ * doing a rather deep integration with signal-exit functionality.
+ * Mostly exposed for the benefit of testing.
+ *
+ * @internal
+ */
+load, 
+/**
+ * Unload the listeners.  Likely you never need to call this, unless
+ * doing a rather deep integration with signal-exit functionality.
+ * Mostly exposed for the benefit of testing.
+ *
+ * @internal
+ */
+unload, } = signalExitWrap(processOk(process$1) ? new SignalExit(process$1) : new SignalExitFallback());
+
+var ansiEscapes$1 = {exports: {}};
+
+(function (module) {
+	const ansiEscapes = module.exports;
+	// TODO: remove this in the next major version
+	module.exports.default = ansiEscapes;
+
+	const ESC = '\u001B[';
+	const OSC = '\u001B]';
+	const BEL = '\u0007';
+	const SEP = ';';
+	const isTerminalApp = process.env.TERM_PROGRAM === 'Apple_Terminal';
+
+	ansiEscapes.cursorTo = (x, y) => {
+		if (typeof x !== 'number') {
+			throw new TypeError('The `x` argument is required');
+		}
+
+		if (typeof y !== 'number') {
+			return ESC + (x + 1) + 'G';
+		}
+
+		return ESC + (y + 1) + ';' + (x + 1) + 'H';
+	};
+
+	ansiEscapes.cursorMove = (x, y) => {
+		if (typeof x !== 'number') {
+			throw new TypeError('The `x` argument is required');
+		}
+
+		let ret = '';
+
+		if (x < 0) {
+			ret += ESC + (-x) + 'D';
+		} else if (x > 0) {
+			ret += ESC + x + 'C';
+		}
+
+		if (y < 0) {
+			ret += ESC + (-y) + 'A';
+		} else if (y > 0) {
+			ret += ESC + y + 'B';
+		}
+
+		return ret;
+	};
+
+	ansiEscapes.cursorUp = (count = 1) => ESC + count + 'A';
+	ansiEscapes.cursorDown = (count = 1) => ESC + count + 'B';
+	ansiEscapes.cursorForward = (count = 1) => ESC + count + 'C';
+	ansiEscapes.cursorBackward = (count = 1) => ESC + count + 'D';
+
+	ansiEscapes.cursorLeft = ESC + 'G';
+	ansiEscapes.cursorSavePosition = isTerminalApp ? '\u001B7' : ESC + 's';
+	ansiEscapes.cursorRestorePosition = isTerminalApp ? '\u001B8' : ESC + 'u';
+	ansiEscapes.cursorGetPosition = ESC + '6n';
+	ansiEscapes.cursorNextLine = ESC + 'E';
+	ansiEscapes.cursorPrevLine = ESC + 'F';
+	ansiEscapes.cursorHide = ESC + '?25l';
+	ansiEscapes.cursorShow = ESC + '?25h';
+
+	ansiEscapes.eraseLines = count => {
+		let clear = '';
+
+		for (let i = 0; i < count; i++) {
+			clear += ansiEscapes.eraseLine + (i < count - 1 ? ansiEscapes.cursorUp() : '');
+		}
+
+		if (count) {
+			clear += ansiEscapes.cursorLeft;
+		}
+
+		return clear;
+	};
+
+	ansiEscapes.eraseEndLine = ESC + 'K';
+	ansiEscapes.eraseStartLine = ESC + '1K';
+	ansiEscapes.eraseLine = ESC + '2K';
+	ansiEscapes.eraseDown = ESC + 'J';
+	ansiEscapes.eraseUp = ESC + '1J';
+	ansiEscapes.eraseScreen = ESC + '2J';
+	ansiEscapes.scrollUp = ESC + 'S';
+	ansiEscapes.scrollDown = ESC + 'T';
+
+	ansiEscapes.clearScreen = '\u001Bc';
+
+	ansiEscapes.clearTerminal = process.platform === 'win32' ?
+		`${ansiEscapes.eraseScreen}${ESC}0f` :
+		// 1. Erases the screen (Only done in case `2` is not supported)
+		// 2. Erases the whole screen including scrollback buffer
+		// 3. Moves cursor to the top-left position
+		// More info: https://www.real-world-systems.com/docs/ANSIcode.html
+		`${ansiEscapes.eraseScreen}${ESC}3J${ESC}H`;
+
+	ansiEscapes.beep = BEL;
+
+	ansiEscapes.link = (text, url) => {
+		return [
+			OSC,
+			'8',
+			SEP,
+			SEP,
+			url,
+			BEL,
+			text,
+			OSC,
+			'8',
+			SEP,
+			SEP,
+			BEL
+		].join('');
+	};
+
+	ansiEscapes.image = (buffer, options = {}) => {
+		let ret = `${OSC}1337;File=inline=1`;
+
+		if (options.width) {
+			ret += `;width=${options.width}`;
+		}
+
+		if (options.height) {
+			ret += `;height=${options.height}`;
+		}
+
+		if (options.preserveAspectRatio === false) {
+			ret += ';preserveAspectRatio=0';
+		}
+
+		return ret + ':' + buffer.toString('base64') + BEL;
+	};
+
+	ansiEscapes.iTerm = {
+		setCwd: (cwd = process.cwd()) => `${OSC}50;CurrentDir=${cwd}${BEL}`,
+
+		annotation: (message, options = {}) => {
+			let ret = `${OSC}1337;`;
+
+			const hasX = typeof options.x !== 'undefined';
+			const hasY = typeof options.y !== 'undefined';
+			if ((hasX || hasY) && !(hasX && hasY && typeof options.length !== 'undefined')) {
+				throw new Error('`x`, `y` and `length` must be defined when `x` or `y` is defined');
+			}
+
+			message = message.replace(/\|/g, '');
+
+			ret += options.isHidden ? 'AddHiddenAnnotation=' : 'AddAnnotation=';
+
+			if (options.length > 0) {
+				ret +=
+						(hasX ?
+							[message, options.length, options.x, options.y] :
+							[options.length, message]).join('|');
+			} else {
+				ret += message;
+			}
+
+			return ret + BEL;
+		}
+	}; 
+} (ansiEscapes$1));
+
+var ansiEscapesExports = ansiEscapes$1.exports;
+const ansiEscapes = /*@__PURE__*/getDefaultExportFromCjs(ansiEscapesExports);
+
+const height = (content) => content.split('\n').length;
+const lastLine = (content) => content.split('\n').pop() ?? '';
+class ScreenManager {
+    rl;
+    // These variables are keeping information to allow correct prompt re-rendering
+    height = 0;
+    extraLinesUnderPrompt = 0;
+    cursorPos;
+    constructor(rl) {
+        this.rl = rl;
+        this.rl = rl;
+        this.cursorPos = rl.getCursorPos();
+    }
+    render(content, bottomContent = '') {
+        /**
+         * Write message to screen and setPrompt to control backspace
+         */
+        const promptLine = lastLine(content);
+        const rawPromptLine = stripAnsi$3(promptLine);
+        // Remove the rl.line from our prompt. We can't rely on the content of
+        // rl.line (mainly because of the password prompt), so just rely on it's
+        // length.
+        let prompt = rawPromptLine;
+        if (this.rl.line.length > 0) {
+            prompt = prompt.slice(0, -this.rl.line.length);
+        }
+        this.rl.setPrompt(prompt);
+        // SetPrompt will change cursor position, now we can get correct value
+        this.cursorPos = this.rl.getCursorPos();
+        const width = readlineWidth();
+        content = breakLines(content, width);
+        bottomContent = breakLines(bottomContent, width);
+        // Manually insert an extra line if we're at the end of the line.
+        // This prevent the cursor from appearing at the beginning of the
+        // current line.
+        if (rawPromptLine.length % width === 0) {
+            content += '\n';
+        }
+        let output = content + (bottomContent ? '\n' + bottomContent : '');
+        /**
+         * Re-adjust the cursor at the correct position.
+         */
+        // We need to consider parts of the prompt under the cursor as part of the bottom
+        // content in order to correctly cleanup and re-render.
+        const promptLineUpDiff = Math.floor(rawPromptLine.length / width) - this.cursorPos.rows;
+        const bottomContentHeight = promptLineUpDiff + (bottomContent ? height(bottomContent) : 0);
+        // Return cursor to the input position (on top of the bottomContent)
+        if (bottomContentHeight > 0)
+            output += ansiEscapes.cursorUp(bottomContentHeight);
+        // Return cursor to the initial left offset.
+        output += ansiEscapes.cursorTo(this.cursorPos.cols);
+        this.clean();
+        this.rl.output.unmute();
+        /**
+         * Set up state for next re-rendering
+         */
+        this.extraLinesUnderPrompt = bottomContentHeight;
+        this.height = height(output);
+        this.rl.output.write(output);
+        this.rl.output.mute();
+    }
+    checkCursorPos() {
+        const cursorPos = this.rl.getCursorPos();
+        if (cursorPos.cols !== this.cursorPos.cols) {
+            this.rl.output.unmute();
+            this.rl.output.write(ansiEscapes.cursorTo(cursorPos.cols));
+            this.rl.output.mute();
+            this.cursorPos = cursorPos;
+        }
+    }
+    clean() {
+        this.rl.output.unmute();
+        this.rl.output.write([
+            this.extraLinesUnderPrompt > 0
+                ? ansiEscapes.cursorDown(this.extraLinesUnderPrompt)
+                : '',
+            ansiEscapes.eraseLines(this.height),
+        ].join(''));
+        this.extraLinesUnderPrompt = 0;
+        this.rl.output.mute();
+    }
+    clearContent() {
+        this.rl.output.unmute();
+        // Reset the cursor at the end of the previously displayed content
+        this.rl.output.write([
+            this.extraLinesUnderPrompt > 0
+                ? ansiEscapes.cursorDown(this.extraLinesUnderPrompt)
+                : '',
+            '\n',
+        ].join(''));
+        this.rl.output.mute();
+    }
+    done() {
+        this.rl.setPrompt('');
+        this.rl.output.unmute();
+        this.rl.output.write(ansiEscapes.cursorShow);
+        this.rl.output.end();
+        this.rl.close();
+    }
+}
+
+function createPrompt(view) {
+    const prompt = (config, context) => {
+        // Default `input` to stdin
+        const input = context?.input ?? process.stdin;
+        // Add mute capabilities to the output
+        const output = new MuteStream$1();
+        output.pipe(context?.output ?? process.stdout);
+        const rl = readline$1.createInterface({
+            terminal: true,
+            input,
+            output,
+        });
+        const screen = new ScreenManager(rl);
+        let cancel = () => { };
+        const answer = new CancelablePromise((resolve, reject) => {
+            withHooks(rl, (store) => {
+                function checkCursorPos() {
+                    screen.checkCursorPos();
+                }
+                const removeExitListener = onExit((code, signal) => {
+                    onExit$1();
+                    reject(new ExitPromptError(`User force closed the prompt with ${code} ${signal}`));
+                });
+                function onExit$1() {
+                    try {
+                        store.hooksCleanup.forEach((cleanFn) => {
+                            cleanFn?.();
+                        });
+                    }
+                    catch (error) {
+                        reject(error);
+                    }
+                    if (context?.clearPromptOnDone) {
+                        screen.clean();
+                    }
+                    else {
+                        screen.clearContent();
+                    }
+                    screen.done();
+                    removeExitListener();
+                    store.rl.input.removeListener('keypress', checkCursorPos);
+                }
+                cancel = () => {
+                    onExit$1();
+                    reject(new CancelPromptError());
+                };
+                function done(value) {
+                    // Delay execution to let time to the hookCleanup functions to registers.
+                    setImmediate(() => {
+                        onExit$1();
+                        // Finally we resolve our promise
+                        resolve(value);
+                    });
+                }
+                function workLoop() {
+                    store.index = 0;
+                    try {
+                        const nextView = view(config, done);
+                        const [content, bottomContent] = typeof nextView === 'string' ? [nextView] : nextView;
+                        screen.render(content, bottomContent);
+                        effectScheduler.run();
+                    }
+                    catch (error) {
+                        onExit$1();
+                        reject(error);
+                    }
+                }
+                store.handleChange = () => workLoop();
+                workLoop();
+                // Re-renders only happen when the state change; but the readline cursor could change position
+                // and that also requires a re-render (and a manual one because we mute the streams).
+                // We set the listener after the initial workLoop to avoid a double render if render triggered
+                // by a state change sets the cursor to the right position.
+                store.rl.input.on('keypress', checkCursorPos);
+            });
+        });
+        answer.cancel = cancel;
+        return answer;
+    };
+    return prompt;
+}
+
+// process.env dot-notation access prints:
+// Property 'TERM' comes from an index signature, so it must be accessed with ['TERM'].ts(4111)
+/* eslint dot-notation: ["off"] */
+// Ported from is-unicode-supported
+function isUnicodeSupported() {
+    if (process$2.platform !== 'win32') {
+        return process$2.env['TERM'] !== 'linux'; // Linux console (kernel)
+    }
+    return (Boolean(process$2.env['WT_SESSION']) || // Windows Terminal
+        Boolean(process$2.env['TERMINUS_SUBLIME']) || // Terminus (<0.2.27)
+        process$2.env['ConEmuTask'] === '{cmd::Cmder}' || // ConEmu and cmder
+        process$2.env['TERM_PROGRAM'] === 'Terminus-Sublime' ||
+        process$2.env['TERM_PROGRAM'] === 'vscode' ||
+        process$2.env['TERM'] === 'xterm-256color' ||
+        process$2.env['TERM'] === 'alacritty' ||
+        process$2.env['TERMINAL_EMULATOR'] === 'JetBrains-JediTerm');
+}
+// Ported from figures
+const common = {
+    circleQuestionMark: '(?)',
+    questionMarkPrefix: '(?)',
+    square: '█',
+    squareDarkShade: '▓',
+    squareMediumShade: '▒',
+    squareLightShade: '░',
+    squareTop: '▀',
+    squareBottom: '▄',
+    squareLeft: '▌',
+    squareRight: '▐',
+    squareCenter: '■',
+    bullet: '●',
+    dot: '․',
+    ellipsis: '…',
+    pointerSmall: '›',
+    triangleUp: '▲',
+    triangleUpSmall: '▴',
+    triangleDown: '▼',
+    triangleDownSmall: '▾',
+    triangleLeftSmall: '◂',
+    triangleRightSmall: '▸',
+    home: '⌂',
+    heart: '♥',
+    musicNote: '♪',
+    musicNoteBeamed: '♫',
+    arrowUp: '↑',
+    arrowDown: '↓',
+    arrowLeft: '←',
+    arrowRight: '→',
+    arrowLeftRight: '↔',
+    arrowUpDown: '↕',
+    almostEqual: '≈',
+    notEqual: '≠',
+    lessOrEqual: '≤',
+    greaterOrEqual: '≥',
+    identical: '≡',
+    infinity: '∞',
+    subscriptZero: '₀',
+    subscriptOne: '₁',
+    subscriptTwo: '₂',
+    subscriptThree: '₃',
+    subscriptFour: '₄',
+    subscriptFive: '₅',
+    subscriptSix: '₆',
+    subscriptSeven: '₇',
+    subscriptEight: '₈',
+    subscriptNine: '₉',
+    oneHalf: '½',
+    oneThird: '⅓',
+    oneQuarter: '¼',
+    oneFifth: '⅕',
+    oneSixth: '⅙',
+    oneEighth: '⅛',
+    twoThirds: '⅔',
+    twoFifths: '⅖',
+    threeQuarters: '¾',
+    threeFifths: '⅗',
+    threeEighths: '⅜',
+    fourFifths: '⅘',
+    fiveSixths: '⅚',
+    fiveEighths: '⅝',
+    sevenEighths: '⅞',
+    line: '─',
+    lineBold: '━',
+    lineDouble: '═',
+    lineDashed0: '┄',
+    lineDashed1: '┅',
+    lineDashed2: '┈',
+    lineDashed3: '┉',
+    lineDashed4: '╌',
+    lineDashed5: '╍',
+    lineDashed6: '╴',
+    lineDashed7: '╶',
+    lineDashed8: '╸',
+    lineDashed9: '╺',
+    lineDashed10: '╼',
+    lineDashed11: '╾',
+    lineDashed12: '−',
+    lineDashed13: '–',
+    lineDashed14: '‐',
+    lineDashed15: '⁃',
+    lineVertical: '│',
+    lineVerticalBold: '┃',
+    lineVerticalDouble: '║',
+    lineVerticalDashed0: '┆',
+    lineVerticalDashed1: '┇',
+    lineVerticalDashed2: '┊',
+    lineVerticalDashed3: '┋',
+    lineVerticalDashed4: '╎',
+    lineVerticalDashed5: '╏',
+    lineVerticalDashed6: '╵',
+    lineVerticalDashed7: '╷',
+    lineVerticalDashed8: '╹',
+    lineVerticalDashed9: '╻',
+    lineVerticalDashed10: '╽',
+    lineVerticalDashed11: '╿',
+    lineDownLeft: '┐',
+    lineDownLeftArc: '╮',
+    lineDownBoldLeftBold: '┓',
+    lineDownBoldLeft: '┒',
+    lineDownLeftBold: '┑',
+    lineDownDoubleLeftDouble: '╗',
+    lineDownDoubleLeft: '╖',
+    lineDownLeftDouble: '╕',
+    lineDownRight: '┌',
+    lineDownRightArc: '╭',
+    lineDownBoldRightBold: '┏',
+    lineDownBoldRight: '┎',
+    lineDownRightBold: '┍',
+    lineDownDoubleRightDouble: '╔',
+    lineDownDoubleRight: '╓',
+    lineDownRightDouble: '╒',
+    lineUpLeft: '┘',
+    lineUpLeftArc: '╯',
+    lineUpBoldLeftBold: '┛',
+    lineUpBoldLeft: '┚',
+    lineUpLeftBold: '┙',
+    lineUpDoubleLeftDouble: '╝',
+    lineUpDoubleLeft: '╜',
+    lineUpLeftDouble: '╛',
+    lineUpRight: '└',
+    lineUpRightArc: '╰',
+    lineUpBoldRightBold: '┗',
+    lineUpBoldRight: '┖',
+    lineUpRightBold: '┕',
+    lineUpDoubleRightDouble: '╚',
+    lineUpDoubleRight: '╙',
+    lineUpRightDouble: '╘',
+    lineUpDownLeft: '┤',
+    lineUpBoldDownBoldLeftBold: '┫',
+    lineUpBoldDownBoldLeft: '┨',
+    lineUpDownLeftBold: '┥',
+    lineUpBoldDownLeftBold: '┩',
+    lineUpDownBoldLeftBold: '┪',
+    lineUpDownBoldLeft: '┧',
+    lineUpBoldDownLeft: '┦',
+    lineUpDoubleDownDoubleLeftDouble: '╣',
+    lineUpDoubleDownDoubleLeft: '╢',
+    lineUpDownLeftDouble: '╡',
+    lineUpDownRight: '├',
+    lineUpBoldDownBoldRightBold: '┣',
+    lineUpBoldDownBoldRight: '┠',
+    lineUpDownRightBold: '┝',
+    lineUpBoldDownRightBold: '┡',
+    lineUpDownBoldRightBold: '┢',
+    lineUpDownBoldRight: '┟',
+    lineUpBoldDownRight: '┞',
+    lineUpDoubleDownDoubleRightDouble: '╠',
+    lineUpDoubleDownDoubleRight: '╟',
+    lineUpDownRightDouble: '╞',
+    lineDownLeftRight: '┬',
+    lineDownBoldLeftBoldRightBold: '┳',
+    lineDownLeftBoldRightBold: '┯',
+    lineDownBoldLeftRight: '┰',
+    lineDownBoldLeftBoldRight: '┱',
+    lineDownBoldLeftRightBold: '┲',
+    lineDownLeftRightBold: '┮',
+    lineDownLeftBoldRight: '┭',
+    lineDownDoubleLeftDoubleRightDouble: '╦',
+    lineDownDoubleLeftRight: '╥',
+    lineDownLeftDoubleRightDouble: '╤',
+    lineUpLeftRight: '┴',
+    lineUpBoldLeftBoldRightBold: '┻',
+    lineUpLeftBoldRightBold: '┷',
+    lineUpBoldLeftRight: '┸',
+    lineUpBoldLeftBoldRight: '┹',
+    lineUpBoldLeftRightBold: '┺',
+    lineUpLeftRightBold: '┶',
+    lineUpLeftBoldRight: '┵',
+    lineUpDoubleLeftDoubleRightDouble: '╩',
+    lineUpDoubleLeftRight: '╨',
+    lineUpLeftDoubleRightDouble: '╧',
+    lineUpDownLeftRight: '┼',
+    lineUpBoldDownBoldLeftBoldRightBold: '╋',
+    lineUpDownBoldLeftBoldRightBold: '╈',
+    lineUpBoldDownLeftBoldRightBold: '╇',
+    lineUpBoldDownBoldLeftRightBold: '╊',
+    lineUpBoldDownBoldLeftBoldRight: '╉',
+    lineUpBoldDownLeftRight: '╀',
+    lineUpDownBoldLeftRight: '╁',
+    lineUpDownLeftBoldRight: '┽',
+    lineUpDownLeftRightBold: '┾',
+    lineUpBoldDownBoldLeftRight: '╂',
+    lineUpDownLeftBoldRightBold: '┿',
+    lineUpBoldDownLeftBoldRight: '╃',
+    lineUpBoldDownLeftRightBold: '╄',
+    lineUpDownBoldLeftBoldRight: '╅',
+    lineUpDownBoldLeftRightBold: '╆',
+    lineUpDoubleDownDoubleLeftDoubleRightDouble: '╬',
+    lineUpDoubleDownDoubleLeftRight: '╫',
+    lineUpDownLeftDoubleRightDouble: '╪',
+    lineCross: '╳',
+    lineBackslash: '╲',
+    lineSlash: '╱',
+};
+const specialMainSymbols = {
+    tick: '✔',
+    info: 'ℹ',
+    warning: '⚠',
+    cross: '✘',
+    squareSmall: '◻',
+    squareSmallFilled: '◼',
+    circle: '◯',
+    circleFilled: '◉',
+    circleDotted: '◌',
+    circleDouble: '◎',
+    circleCircle: 'ⓞ',
+    circleCross: 'ⓧ',
+    circlePipe: 'Ⓘ',
+    radioOn: '◉',
+    radioOff: '◯',
+    checkboxOn: '☒',
+    checkboxOff: '☐',
+    checkboxCircleOn: 'ⓧ',
+    checkboxCircleOff: 'Ⓘ',
+    pointer: '❯',
+    triangleUpOutline: '△',
+    triangleLeft: '◀',
+    triangleRight: '▶',
+    lozenge: '◆',
+    lozengeOutline: '◇',
+    hamburger: '☰',
+    smiley: '㋡',
+    mustache: '෴',
+    star: '★',
+    play: '▶',
+    nodejs: '⬢',
+    oneSeventh: '⅐',
+    oneNinth: '⅑',
+    oneTenth: '⅒',
+};
+const specialFallbackSymbols = {
+    tick: '√',
+    info: 'i',
+    warning: '‼',
+    cross: '×',
+    squareSmall: '□',
+    squareSmallFilled: '■',
+    circle: '( )',
+    circleFilled: '(*)',
+    circleDotted: '( )',
+    circleDouble: '( )',
+    circleCircle: '(○)',
+    circleCross: '(×)',
+    circlePipe: '(│)',
+    radioOn: '(*)',
+    radioOff: '( )',
+    checkboxOn: '[×]',
+    checkboxOff: '[ ]',
+    checkboxCircleOn: '(×)',
+    checkboxCircleOff: '( )',
+    pointer: '>',
+    triangleUpOutline: '∆',
+    triangleLeft: '◄',
+    triangleRight: '►',
+    lozenge: '♦',
+    lozengeOutline: '◊',
+    hamburger: '≡',
+    smiley: '☺',
+    mustache: '┌─┐',
+    star: '✶',
+    play: '►',
+    nodejs: '♦',
+    oneSeventh: '1/7',
+    oneNinth: '1/9',
+    oneTenth: '1/10',
+};
+const mainSymbols = { ...common, ...specialMainSymbols };
+const fallbackSymbols = {
+    ...common,
+    ...specialFallbackSymbols,
+};
+const shouldUseMain = isUnicodeSupported();
+const figures = shouldUseMain ? mainSymbols : fallbackSymbols;
+const figures$1 = figures;
+
+/**
+ * Separator object
+ * Used to space/separate choices group
+ */
+class Separator {
+    separator = colors$1.dim(Array.from({ length: 15 }).join(figures$1.line));
+    type = 'separator';
+    constructor(separator) {
+        if (separator) {
+            this.separator = separator;
+        }
+    }
+    static isSeparator(choice) {
+        return Boolean(choice && choice.type === 'separator');
+    }
+}
+
+const selectTheme = {
+    icon: { cursor: figures$1.pointer },
+    style: { disabled: (text) => colors$1.dim(`- ${text}`) },
+    helpMode: 'auto',
+};
+function isSelectable(item) {
+    return !Separator.isSeparator(item) && !item.disabled;
+}
+const select = createPrompt((config, done) => {
+    const { choices: items, loop = true, pageSize = 7 } = config;
+    const firstRender = useRef(true);
+    const theme = makeTheme(selectTheme, config.theme);
+    const prefix = usePrefix({ theme });
+    const [status, setStatus] = useState('pending');
+    const searchTimeoutRef = useRef();
+    const bounds = useMemo(() => {
+        const first = items.findIndex(isSelectable);
+        const last = items.findLastIndex(isSelectable);
+        if (first < 0) {
+            throw new ValidationError('[select prompt] No selectable choices. All choices are disabled.');
+        }
+        return { first, last };
+    }, [items]);
+    const defaultItemIndex = useMemo(() => {
+        if (!('default' in config))
+            return -1;
+        return items.findIndex((item) => isSelectable(item) && item.value === config.default);
+    }, [config.default, items]);
+    const [active, setActive] = useState(defaultItemIndex === -1 ? bounds.first : defaultItemIndex);
+    // Safe to assume the cursor position always point to a Choice.
+    const selectedChoice = items[active];
+    useKeypress((key, rl) => {
+        clearTimeout(searchTimeoutRef.current);
+        if (isEnterKey(key)) {
+            setStatus('done');
+            done(selectedChoice.value);
+        }
+        else if (isUpKey(key) || isDownKey(key)) {
+            rl.clearLine(0);
+            if (loop ||
+                (isUpKey(key) && active !== bounds.first) ||
+                (isDownKey(key) && active !== bounds.last)) {
+                const offset = isUpKey(key) ? -1 : 1;
+                let next = active;
+                do {
+                    next = (next + offset + items.length) % items.length;
+                } while (!isSelectable(items[next]));
+                setActive(next);
+            }
+        }
+        else if (isNumberKey(key)) {
+            rl.clearLine(0);
+            const position = Number(key.name) - 1;
+            const item = items[position];
+            if (item != null && isSelectable(item)) {
+                setActive(position);
+            }
+        }
+        else if (isBackspaceKey(key)) {
+            rl.clearLine(0);
+        }
+        else {
+            // Default to search
+            const searchTerm = rl.line.toLowerCase();
+            const matchIndex = items.findIndex((item) => {
+                if (Separator.isSeparator(item) || !isSelectable(item))
+                    return false;
+                return String(item.name || item.value)
+                    .toLowerCase()
+                    .startsWith(searchTerm);
+            });
+            if (matchIndex >= 0) {
+                setActive(matchIndex);
+            }
+            searchTimeoutRef.current = setTimeout(() => {
+                rl.clearLine(0);
+            }, 700);
+        }
+    });
+    const message = theme.style.message(config.message);
+    let helpTipTop = '';
+    let helpTipBottom = '';
+    if (theme.helpMode === 'always' ||
+        (theme.helpMode === 'auto' && firstRender.current)) {
+        firstRender.current = false;
+        if (items.length > pageSize) {
+            helpTipBottom = `\n${theme.style.help('(Use arrow keys to reveal more choices)')}`;
+        }
+        else {
+            helpTipTop = theme.style.help('(Use arrow keys)');
+        }
+    }
+    const page = usePagination({
+        items,
+        active,
+        renderItem({ item, isActive }) {
+            if (Separator.isSeparator(item)) {
+                return ` ${item.separator}`;
+            }
+            const line = item.name || item.value;
+            if (item.disabled) {
+                const disabledLabel = typeof item.disabled === 'string' ? item.disabled : '(disabled)';
+                return theme.style.disabled(`${line} ${disabledLabel}`);
+            }
+            const color = isActive ? theme.style.highlight : (x) => x;
+            const cursor = isActive ? theme.icon.cursor : ` `;
+            return color(`${cursor} ${line}`);
+        },
+        pageSize,
+        loop,
+    });
+    if (status === 'done') {
+        const answer = selectedChoice.name ||
+            // TODO: Could we enforce that at the type level? Name should be defined for non-string values.
+            String(selectedChoice.value);
+        return `${prefix} ${message} ${theme.style.answer(answer)}`;
+    }
+    const choiceDescription = selectedChoice.description
+        ? `\n${selectedChoice.description}`
+        : ``;
+    return `${[prefix, message, helpTipTop].filter(Boolean).join(' ')}\n${page}${choiceDescription}${helpTipBottom}${ansiEscapes.cursorHide}`;
+});
+
 const index = defineCommand({
   meta: {
     name: "init-template",
@@ -8093,20 +13395,15 @@ const index = defineCommand({
     }
   },
   async run() {
-    const response = await prompts({
-      type: "select",
-      name: "select-template",
-      message: "Pick template",
+    const answer = await select({
+      message: "Pick template:",
       choices: [
-        { title: "Third Party App", value: "third-party" },
-        {
-          title: "Third Party App using App block",
-          value: "third-party-app-block"
-        },
-        { title: "Base Element", value: "element" }
+        { name: "Third Party App", value: "Third Party Appy" },
+        { name: "Third Party App using App block", value: "third-party-app-block" },
+        { name: "Base Element", value: "element" }
       ]
     });
-    switch (response["select-template"]) {
+    switch (answer) {
       case "third-party": {
         consola.start("Creating third party template...");
         await _initThirdPartyTemplate();

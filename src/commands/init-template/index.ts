@@ -1,7 +1,7 @@
 import { defineCommand } from 'citty'
 import { consola } from 'consola'
-import prompts from 'prompts'
 import { _initThirdPartyTemplate } from './thirdparty'
+import select from '@inquirer/select';
 
 export default defineCommand({
   meta: {
@@ -23,21 +23,16 @@ export default defineCommand({
     },
   },
   async run() {
-    const response = await prompts({
-      type: 'select',
-      name: 'select-template',
-      message: 'Pick template',
-      choices: [
-        { title: 'Third Party App', value: 'third-party' },
-        {
-          title: 'Third Party App using App block',
-          value: 'third-party-app-block',
-        },
-        { title: 'Base Element', value: 'element' },
-      ],
-    })
+      const answer = await select({
+          message: 'Pick template:',
+          choices: [
+              { name: 'Third Party App', value: 'Third Party Appy' },
+              { name: 'Third Party App using App block', value: 'third-party-app-block' },
+              { name: 'Base Element', value: 'element' },
+          ],
+      });
 
-    switch (response['select-template']) {
+    switch (answer) {
       case 'third-party': {
         consola.start('Creating third party template...')
         await _initThirdPartyTemplate()
