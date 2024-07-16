@@ -1016,15 +1016,12 @@ const version = "0.0.7";
 const description = "⚡️ Gempages Generation CLI Experience";
 const license = "MIT";
 const type = "module";
+const author = "pin705";
 const repository = {
 	type: "git",
 	url: "https://github.com/pin705/gem-cli"
 };
-const exports = {
-	".": "./dist/index.mjs",
-	"./cli": "./bin/gem-cli.js"
-};
-const types = "./dist/index.d.ts";
+const main$1 = "./bin/gem-cli.js";
 const bin = {
 	"gem-cli": "./bin/gem-cli.js"
 };
@@ -1062,9 +1059,9 @@ const pkg = {
 	description: description,
 	license: license,
 	type: type,
+	author: author,
 	repository: repository,
-	exports: exports,
-	types: types,
+	main: main$1,
 	bin: bin,
 	files: files,
 	scripts: scripts,
