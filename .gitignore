@@ -1,8 +1,8 @@
 node_modules
 coverage
-dist
 .vscode
 .DS_Store
+.idea
 .eslintcache
 *.log*
 *.env*

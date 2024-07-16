@@ -4,6 +4,10 @@
   "description": "⚡️ Gempages Generation CLI Experience",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pin705/gem-cli"
+  },
   "exports": {
     ".": "./dist/index.mjs",
     "./cli": "./bin/gem-cli.mjs"
@@ -36,13 +40,11 @@
     "consola": "^3.2.3",
     "eslint": "^9.2.0",
     "eslint-config-unjs": "^0.3.2",
-    "unbuild": "^2.0.0"
+    "unbuild": "^2.0.0",
+     "@types/prompts": "^2.4.9",
+    "node-html-parser": "^6.1.13"
   },
   "engines": {
     "node": "^16.10.0 || >=18.0.0"
-  },
-  "dependencies": {
-    "@types/prompts": "^2.4.9",
-    "node-html-parser": "^6.1.13"
   }
 }
