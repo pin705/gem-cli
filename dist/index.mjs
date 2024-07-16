@@ -1,2 +1,2 @@
-export { m as main, r as runCommand, b as runMain } from './shared/gem-cli.fb0ecb28.mjs';
+export { m as main, r as runCommand, b as runMain } from './shared/gempages-cli.299fafe2.mjs';
 import 'node:tty';

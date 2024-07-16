@@ -9,8 +9,8 @@
     "type": "git",
     "url": "https://github.com/pin705/gem-cli"
   },
-  "main": "./bin/gem-cli.js",
-  "bin": "./bin/gem-cli.js",
+  "main": "./bin/gempages-cli.js",
+  "bin": "./bin/gempages-cli.js",
   "files": [
     "bin",
     "dist"
@@ -21,8 +21,8 @@
     "build:stub": "unbuild --stub",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "gem-cli": "node ./bin/gem-cli.js",
-    "gem-cli-bun": "bun --bun ./bin/gem-cli.js",
+    "gempages-cli": "node ./bin/gempages-cli.js",
+    "gempages-cli-bun": "bun --bun ./bin/gempages-cli.js",
     "prepack": "unbuild",
     "test": "pnpm lint && pnpm test:types && pnpm build && pnpm test:dist",
     "test:types": "tsc --noEmit",

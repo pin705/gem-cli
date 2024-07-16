@@ -1,4 +1,4 @@
-import { c as consola, a as colors$2, d as defineCommand } from '../shared/gem-cli.fb0ecb28.mjs';
+import { c as consola, a as colors$2, d as defineCommand } from '../shared/gempages-cli.299fafe2.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import * as readline$1 from 'node:readline';
