@@ -1012,7 +1012,7 @@ async function runMain$1(cmd, opts = {}) {
 }
 
 const name = "@pinjs/gem-cli";
-const version = "0.0.6";
+const version = "0.0.7";
 const description = "⚡️ Gempages Generation CLI Experience";
 const license = "MIT";
 const type = "module";

@@ -4,15 +4,12 @@
   "description": "⚡️ Gempages Generation CLI Experience",
   "license": "MIT",
   "type": "module",
+  "author": "pin705",
   "repository": {
     "type": "git",
     "url": "https://github.com/pin705/gem-cli"
   },
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./cli": "./bin/gem-cli.js"
-  },
-  "types": "./dist/index.d.ts",
+  "main": "./bin/gem-cli.js",
   "bin": {
     "gem-cli": "./bin/gem-cli.js"
   },
